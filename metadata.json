@@ -1,0 +1,6 @@
+{
+  "name": "Inner Being Wellness",
+  "description": "Holistic wellness sanctuary for mindful movement, sound healing, and inner transformation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
