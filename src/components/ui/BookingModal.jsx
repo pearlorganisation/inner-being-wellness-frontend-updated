@@ -67,7 +67,7 @@ export const BookingModal = () => {
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full overflow-hidden border border-[#EAE5DD] shadow-xs">
                 <img
-                  src="/src/assets/images/inner_being_logo_1791870134219.jpg"
+                  src="/assets/images/inner_being_logo_1791870134219.jpg"
                   alt="Inner Being Logo"
                   className="w-full h-full object-cover scale-110"
                 />

@@ -107,7 +107,7 @@ export const WisdomShowcase = () => {
         {/* Left 55%: Sunlit Yoga Studio Photography */}
         <div className="lg:col-span-7 relative min-h-[340px] lg:min-h-[460px] overflow-hidden">
           <img
-            src="/src/assets/images/yoga_sunroom_1791868806713.jpg"
+            src="/assets/images/yoga_sunroom_1791868806713.jpg"
             alt="Yogi practicing mindful pose in sunlit sanctuary with candles and plants"
             className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
             referrerPolicy="no-referrer"

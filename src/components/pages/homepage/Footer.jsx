@@ -31,7 +31,7 @@ export const Footer = () => {
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-full overflow-hidden bg-white p-0.5 border border-white/20 shadow-xs flex items-center justify-center shrink-0">
                 <img
-                  src="/src/assets/images/inner_being_logo_1791870134219.jpg"
+                  src="/assets/images/inner_being_logo_1791870134219.jpg"
                   alt="Inner Being Logo"
                   className="w-full h-full object-cover scale-110"
                   referrerPolicy="no-referrer"

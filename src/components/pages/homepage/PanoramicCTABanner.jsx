@@ -11,7 +11,7 @@ export const PanoramicCTABanner = () => {
     <section className="py-12 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
       <div className="relative rounded-3xl overflow-hidden min-h-[500px] md:min-h-[560px] flex items-center shadow-lg border border-[#EAE5DD]">
         <img
-          src="/src/assets/images/mountain_meditation_1791868808291.jpg"
+          src="/assets/images/mountain_meditation_1791868808291.jpg"
           alt="Meditator atop sunrise mountain ridge"
           className="absolute inset-0 w-full h-full object-cover object-center"
           referrerPolicy="no-referrer"

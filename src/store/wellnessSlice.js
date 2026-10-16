@@ -10,7 +10,7 @@ const initialPrograms = [
     badgeColor: '#E9D5FF', // Soft lilac/purple
     tagline: 'Harmonize physical posture and internal rhythm through gentle somatic flow.',
     description: 'Yoga, mindfulness, and breathing exercises to build a calm, grounded, and energized you. Suitable for beginners to seasoned practitioners seeking mindful alignment.',
-    image: '/src/assets/images/program_mind_balance_1791868807308.jpg',
+    image: '/assets/images/program_mind_balance_1791868807308.jpg',
     duration: '60 - 75 Mins',
     instructor: {
       name: 'Elena Vance',
@@ -39,7 +39,7 @@ const initialPrograms = [
     badgeColor: '#DCFCE7', // Soft sage green
     tagline: 'Bathe the nervous system in sacred frequencies and restorative therapies.',
     description: 'Restorative sonic vibration therapy to relieve deep-seated stress and nurture mental well-being. Hammered Himalayan singing bowls and gentle tuning forks.',
-    image: '/src/assets/images/program_guided_healing_1791868808281.jpg',
+    image: '/assets/images/program_guided_healing_1791868808281.jpg',
     duration: '90 Mins',
     instructor: {
       name: 'Julian Mercer',
@@ -68,7 +68,7 @@ const initialPrograms = [
     badgeColor: '#FEF08A', // Soft warm yellow/peach
     tagline: 'Cultivate emotional clarity, grounded presence, and conscious daily living.',
     description: 'Mindful self-discovery and meditation programs to help you align with your true self. Learn how to transform reactivity into centered poise and intentional intention.',
-    image: '/src/assets/images/program_inner_growth_1791868807800.jpg',
+    image: '/assets/images/program_inner_growth_1791868807800.jpg',
     duration: '60 Mins',
     instructor: {
       name: 'Dr. Sarah Lin, PhD',

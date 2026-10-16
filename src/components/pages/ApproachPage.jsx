@@ -28,7 +28,7 @@ export const ApproachPage = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-20">
         <div className="lg:col-span-6 rounded-[32px] overflow-hidden border border-[#EAE5DD] shadow-md">
           <img
-            src="/src/assets/images/yoga_sunroom_1791868806713.jpg"
+            src="/assets/images/yoga_sunroom_1791868806713.jpg"
             alt="Sunroom yoga meditation"
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
