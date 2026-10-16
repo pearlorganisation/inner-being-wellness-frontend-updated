@@ -179,8 +179,6 @@ import { motion } from "motion/react";
 import { Star, ArrowRight } from "lucide-react";
 import { useAppDispatch } from "../../../store/store";
 import { openBookingModal, setCurrentNav } from "../../../store/wellnessSlice";
-import botanicalCorner from "../../../assets/images/Botanical corner.png";
-import goldenBotanical from "../../../assets/images/Golden botanical decoration.png";
 
 import { ProgramDetailModal } from '../../ui/ProgramDetailModal';
 import { BookingModal } from '../../ui/BookingModal';
@@ -352,7 +350,7 @@ export const HeroSection = () => {
     <section className="relative isolate overflow-hidden pt-8 pb-12 md:pt-14 md:pb-16 text-center bg-[#FBF9F4]">
       {/* Tablet / Small Desktop Botanical Decorations */}
       <img
-        src={botanicalCorner}
+        src="/assets/images/Botanical corner.png"
         alt=""
         aria-hidden="true"
         draggable={false}
@@ -361,7 +359,7 @@ export const HeroSection = () => {
       />
 
       <img
-        src={goldenBotanical}
+        src="/assets/images/Golden botanical.png"
         alt=""
         aria-hidden="true"
         draggable={false}
@@ -372,7 +370,7 @@ export const HeroSection = () => {
       {/* Desktop Left Botanical */}
       <div className="hidden xl:flex flex-col items-start absolute left-8 2xl:left-16 top-10 pointer-events-none select-none z-10">
         <img
-          src={botanicalCorner}
+          src="/assets/images/Botanical corner.png"
           alt=""
           aria-hidden="true"
           draggable={false}
@@ -391,7 +389,7 @@ export const HeroSection = () => {
       {/* Desktop Right Botanical */}
       <div className="hidden xl:flex flex-col items-end absolute right-8 2xl:right-16 top-10 pointer-events-none select-none z-10">
         <img
-          src={goldenBotanical}
+          src="/assets/images/Golden botanical.png"
           alt=""
           aria-hidden="true"
           draggable={false}

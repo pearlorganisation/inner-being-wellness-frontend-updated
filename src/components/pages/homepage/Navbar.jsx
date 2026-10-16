@@ -191,7 +191,6 @@ import {
   openBookingModal,
   openSignInModal
 } from '../../../store/wellnessSlice';
-import logo from '../../assets/images/inner_being_logo_1791870134219.jpg';
 
 export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -221,7 +220,7 @@ export const Navbar = () => {
         >
           <div className="w-12 h-12 rounded-full overflow-hidden bg-white p-0.5 border border-[#EAE5DD] shadow-xs flex items-center justify-center shrink-0 transition-transform group-hover:scale-105">
             <img
-              src={logo}
+              src="/assets/images/inner_being_logo_1791870134219.jpg"
               alt="Inner Being Wellness Tree of Life Logo"
               className="w-full h-full object-cover scale-110"
               referrerPolicy="no-referrer"
