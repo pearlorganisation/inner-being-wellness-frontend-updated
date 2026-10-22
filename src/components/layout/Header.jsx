@@ -23,7 +23,7 @@ export default function Header() {
     { label: "Home", href: "/", id: "home" },
     { label: "Manifesto", href: "/#manifesto", id: "manifesto" },
     { label: "About us", href: "/about", id: "about" },
-    { label: "Product", href: "/freedom-from-resistance", id: "product" },
+    { label: "Product", href: "/freedom-from-resistance", id: "Product" },
     { label: "Programs", href: "/offerings", id: "programs" },
     { label: "Defaults", href: "/#four-defaults", id: "defaults" },
     { label: "Contact", href: "/contact", id: "contact" },
@@ -68,13 +68,14 @@ export default function Header() {
             {navLinks.map((link) => {
               const isHomeActive = currentPath === "/" && link.id === "home";
               const isAboutActive = currentPath === "/about" && link.id === "about";
+              const isProductActive = currentPath === "/freedom-from-resistance" && link.id === "Product";
               const isOfferingsActive =
-                (currentPath === "/offerings" || currentPath === "/freedom-from-resistance") &&
+                (currentPath === "/offerings" ) &&
                 link.id === "programs";
               const isContactActive = currentPath === "/contact" && link.id === "contact";
 
               const isActive =
-                isHomeActive || isAboutActive || isOfferingsActive || isContactActive;
+                isHomeActive || isAboutActive || isProductActive || isOfferingsActive || isContactActive;
 
               return (
                 <Link
@@ -134,12 +135,13 @@ export default function Header() {
             {navLinks.map((link) => {
               const isHomeActive = currentPath === "/" && link.id === "home";
               const isAboutActive = currentPath === "/about" && link.id === "about";
+              const isProductActive = currentPath === "/freedom-from-resistance" && link.id === "Product";
               const isOfferingsActive =
                 (currentPath === "/offerings" || currentPath === "/freedom-from-resistance") &&
                 link.id === "programs";
               const isContactActive = currentPath === "/contact" && link.id === "contact";
               const isActive =
-                isHomeActive || isAboutActive || isOfferingsActive || isContactActive;
+                isHomeActive || isAboutActive || isProductActive  || isOfferingsActive || isContactActive;
 
               return (
                 <Link
