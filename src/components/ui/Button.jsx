@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 /**
  * Reusable Button Component for Inner Being Wellness
  * Styled matching the Figma design: Amber-gold pills and elegant outlines.
@@ -43,9 +45,9 @@ export default function Button({
 
   if (href) {
     return (
-      <a href={href} className={combinedClasses} onClick={onClick} {...props}>
+      <Link href={href} className={combinedClasses} onClick={onClick} {...props}>
         {children}
-      </a>
+      </Link>
     );
   }
 

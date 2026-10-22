@@ -1,21 +1,20 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Inner Being Wellness (Next.js)
 
-# Run and deploy your AI Studio app
+## Run locally
+```bash
+npm install
+npm run dev      # http://localhost:3000
+npm run build && npm start
+```
 
-This contains everything you need to run your app locally.
+## Routes
+| Route | File |
+| --- | --- |
+| `/` | `src/app/page.js` |
+| `/about` | `src/app/about/page.js` |
+| `/offerings` | `src/app/offerings/page.js` |
+| `/freedom-from-resistance` (`/freedom` redirects here) | `src/app/freedom-from-resistance/page.js` |
+| `/thoughts` | `src/app/thoughts/page.js` |
+| `/contact?interest=...` | `src/app/contact/page.js` |
 
-View your app in AI Studio: https://ai.studio/apps/2c9fffb3-766a-4871-8b99-173560b5d27f
-
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
-   
+Page UI lives in `src/views/*`, shared components in `src/components/*`, content in `src/data/siteData.js`.

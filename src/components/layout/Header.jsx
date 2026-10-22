@@ -1,8 +1,13 @@
-import { useState, useEffect } from "react";
-import { Menu, X, ArrowRight } from "lucide-react";
-import Button from "../ui/Button.jsx";
+"use client";
 
-export default function Header({ currentPath = "/", onNavigate }) {
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Menu, X, ArrowRight } from "lucide-react";
+import Button from "@/components/ui/Button";
+
+export default function Header() {
+  const currentPath = usePathname() || "/";
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -23,13 +28,7 @@ export default function Header({ currentPath = "/", onNavigate }) {
     { label: "Contact", href: "/contact", id: "contact" },
   ];
 
-  const handleNavClick = (href, e) => {
-    e.preventDefault();
-    setMobileMenuOpen(false);
-    if (onNavigate) {
-      onNavigate(href);
-    }
-  };
+  const closeMenu = () => setMobileMenuOpen(false);
 
   return (
     <header
@@ -42,9 +41,9 @@ export default function Header({ currentPath = "/", onNavigate }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-6">
           {/* Zone 1: Logo & Brand Lockup */}
-          <a
+          <Link
             href="/"
-            onClick={(e) => handleNavClick("/", e)}
+            onClick={closeMenu}
             className="flex items-center gap-3 shrink-0 group"
           >
             <img
@@ -61,7 +60,7 @@ export default function Header({ currentPath = "/", onNavigate }) {
                 WELLNESS
               </span>
             </div>
-          </a>
+          </Link>
 
           {/* Zone 2: Navigation Links (matching screenshot) */}
           <nav className="hidden lg:flex items-center gap-8 text-sm font-medium">
@@ -77,10 +76,10 @@ export default function Header({ currentPath = "/", onNavigate }) {
                 isHomeActive || isAboutActive || isOfferingsActive || isContactActive;
 
               return (
-                <a
+                <Link
                   key={link.id}
                   href={link.href}
-                  onClick={(e) => handleNavClick(link.href, e)}
+                  onClick={closeMenu}
                   className={`relative py-1 whitespace-nowrap transition-colors ${
                     isActive
                       ? "text-[#2D1C59] font-semibold"
@@ -91,7 +90,7 @@ export default function Header({ currentPath = "/", onNavigate }) {
                   {isActive && (
                     <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#2D1C59] rounded-full" />
                   )}
-                </a>
+                </Link>
               );
             })}
           </nav>
@@ -102,7 +101,8 @@ export default function Header({ currentPath = "/", onNavigate }) {
               <Button
                 variant="primary"
                 size="sm"
-                onClick={(e) => handleNavClick("/contact", e)}
+                href="/contact"
+                onClick={closeMenu}
               >
                 Book Session
               </Button>
@@ -141,10 +141,10 @@ export default function Header({ currentPath = "/", onNavigate }) {
                 isHomeActive || isAboutActive || isOfferingsActive || isContactActive;
 
               return (
-                <a
+                <Link
                   key={link.id}
                   href={link.href}
-                  onClick={(e) => handleNavClick(link.href, e)}
+                  onClick={closeMenu}
                   className={`px-4 py-2.5 rounded-lg text-base font-medium transition-colors flex items-center justify-between ${
                     isActive
                       ? "bg-[#2D1C59]/10 text-[#2D1C59] font-semibold"
@@ -153,7 +153,7 @@ export default function Header({ currentPath = "/", onNavigate }) {
                 >
                   <span>{link.label}</span>
                   <ArrowRight className="w-4 h-4 opacity-40" />
-                </a>
+                </Link>
               );
             })}
             <div className="pt-3 border-t border-[#2D1C59]/10 mt-2">
@@ -161,7 +161,8 @@ export default function Header({ currentPath = "/", onNavigate }) {
                 variant="primary"
                 size="md"
                 className="w-full justify-center"
-                onClick={(e) => handleNavClick("/contact", e)}
+                href="/contact"
+                onClick={closeMenu}
               >
                 Book Session
               </Button>

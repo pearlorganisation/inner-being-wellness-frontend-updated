@@ -1,15 +1,9 @@
-import { siteData } from "../../data/siteData.js";
+import Link from "next/link";
+import { siteData } from "@/data/siteData";
 import { Mail, Clock, MapPin, Heart } from "lucide-react";
 
-export default function Footer({ onNavigate }) {
+export default function Footer() {
   const { footer, brand } = siteData;
-
-  const handleLinkClick = (href, e) => {
-    e.preventDefault();
-    if (onNavigate) {
-      onNavigate(href);
-    }
-  };
 
   return (
     <footer className="bg-[#1A103F] text-[#DCE2DE] border-t border-[#2D1C59]/30 pt-16 pb-12">
@@ -59,13 +53,12 @@ export default function Footer({ onNavigate }) {
             <ul className="space-y-2.5 text-sm text-[#B3BDCC]">
               {footer.columns[0].links.map((link, idx) => (
                 <li key={idx}>
-                  <a
+                  <Link
                     href={link.href}
-                    onClick={(e) => handleLinkClick(link.href, e)}
                     className="hover:text-white transition-colors block py-0.5"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -79,13 +72,12 @@ export default function Footer({ onNavigate }) {
             <ul className="space-y-2.5 text-sm text-[#B3BDCC]">
               {footer.columns[1].links.map((link, idx) => (
                 <li key={idx}>
-                  <a
+                  <Link
                     href={link.href}
-                    onClick={(e) => handleLinkClick(link.href, e)}
                     className="hover:text-white transition-colors block py-0.5"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
