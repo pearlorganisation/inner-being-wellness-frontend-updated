@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/thoughts/layout,_N_T_/thoughts/page,_N_T_/thoughts"
+  },
+  "routeCache": {
+    "key": "/route-cache/APP_PAGE/6647c6653657b35f83a26ef74a2f0f916643858efbedec959a1770d7e1ea69ab/$/thoughts",
+    "owner": {
+      "kind": "APP_PAGE",
+      "sourceRoute": "/thoughts/page"
+    },
+    "isFallback": false
+  }
+}
