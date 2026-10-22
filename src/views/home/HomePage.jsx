@@ -52,7 +52,7 @@ export default function HomePage() {
           alt=""
           className="w-full h-full object-contain object-left-top"
           style={{ filter: "brightness(1.06) contrast(1.05)" }}
-          aria-hidden="true"
+          aria-hidden="true" 
         />
       </div>
       {/* 1. HERO SECTION (Exact layout, typography, colors, and styling from screenshot) */}

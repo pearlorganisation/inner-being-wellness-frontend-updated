@@ -7,7 +7,7 @@
  * - decorations     : optional botanical images, set a value to null to hide it
  */
 const A = "/assets/aistudio";
-const F = "/assets/aistudio/freedom";
+const F = "/public/assets/aistudio/fre";
 
 export const freedomPageData = {
   meta: {
