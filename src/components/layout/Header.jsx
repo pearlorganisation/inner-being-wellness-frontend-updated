@@ -23,6 +23,7 @@ export default function Header() {
     { label: "Home", href: "/", id: "home" },
     { label: "Manifesto", href: "/#manifesto", id: "manifesto" },
     { label: "About us", href: "/about", id: "about" },
+    { label: "Product", href: "/freedom-from-resistance", id: "product" },
     { label: "Programs", href: "/offerings", id: "programs" },
     { label: "Defaults", href: "/#four-defaults", id: "defaults" },
     { label: "Contact", href: "/contact", id: "contact" },
