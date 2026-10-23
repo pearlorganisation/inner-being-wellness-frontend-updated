@@ -2135,7 +2135,7 @@ export const siteData = {
         sessionFormat:
           "Private frequency session; format confirmed after enquiry.",
         image: {
-          src: "/assets/aistudio/program_mind_balance_1791870134219_0c50a090.jpg",
+          src: "/assets/aistudio/program_mind_balance_1791868807308_0c50a090.jpg",
           alt: "A peaceful holistic wellness space with sound instruments",
         },
         cta: {
