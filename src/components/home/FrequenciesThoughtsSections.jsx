@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { homeSectionsData } from "@/data/homeSectionsData";
 
+
 const TONES = {
   purple: "text-[#2D1C59]",
   teal: "text-[#0E6E6B]",
