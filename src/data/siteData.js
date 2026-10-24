@@ -8,7 +8,7 @@ export const siteData = {
     founderName: "Muazzam Abdul Rehman",
     founderTitle: "Managing Director, Jusoor Facility Management",
     logoText: "IBW",
-    logoImage: "/assets/aistudio/inner_being_logo_1791870134219_08a12639.png",
+    logoImage: "/assets/aistudio/sinner_being_logo.png",
     contact: {
       email: "hello@innerbeingwellness.com",
       responseTime: "We aim to respond within two working days.",
