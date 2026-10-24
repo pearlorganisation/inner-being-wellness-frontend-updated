@@ -2260,7 +2260,7 @@ export default function HomePage() {
   return (
     <div className="w-full relative bg-[#FBF9F5]">
       {/* Botanical left edge decorative artwork — blends into page background */}
-      <div
+      {/* <div
         className="absolute top-0 left-0 w-32 sm:w-48 lg:w-64 h-[850px] pointer-events-none z-10 opacity-80 lg:opacity-95"
         style={{
           mixBlendMode: "multiply",
@@ -2279,7 +2279,33 @@ export default function HomePage() {
           style={{ filter: "brightness(1.06) contrast(1.05)" }}
           aria-hidden="true"
         />
-      </div>
+      </div> */}
+
+
+
+<div
+  className="hidden lg:block absolute top-0 left-0 w-32 sm:w-48 lg:w-64 h-[850px] pointer-events-none z-10 opacity-80 lg:opacity-95"
+  style={{
+    mixBlendMode: "multiply",
+    WebkitMaskImage:
+      "linear-gradient(to right, black 55%, transparent 100%), linear-gradient(to bottom, black 70%, transparent 100%)",
+    maskImage:
+      "linear-gradient(to right, black 55%, transparent 100%), linear-gradient(to bottom, black 70%, transparent 100%)",
+    WebkitMaskComposite: "source-in",
+    maskComposite: "intersect",
+  }}
+>
+  <img
+    src="/assets/aistudio/Botanical_border_880a09be-removebg-preview.png"
+    alt=""
+    className="w-full h-full object-contain object-left-top"
+    style={{ filter: "brightness(1.06) contrast(1.05)" }}
+    aria-hidden="true"
+  />
+</div>
+
+
+      
 
       {/* 1. HERO SECTION */}
       <section className="relative overflow-hidden pt-6 pb-16 lg:pt-12 lg:pb-24 ">
