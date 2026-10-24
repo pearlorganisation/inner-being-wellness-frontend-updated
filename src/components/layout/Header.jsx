@@ -561,9 +561,10 @@ export default function Header() {
             className="flex items-center gap-3 shrink-0 group"
           >
             <img
-              src="/assets/aistudio/inner_being_logo_1791870134219_08a12639.png"
+              // src="/assets/aistudio/inner_being_logo_1791870134219_08a12639.png"
+              src="/assets/aistudio/sinner_being_logo.png"
               alt="Inner Being Wellness logo"
-              className="w-10 h-10 object-contain rounded-full bg-white/80 p-0.5 shadow-2xs group-hover:scale-105 transition-transform"
+              className="w-20 h-20 object-contain rounded-full bg-white/80 p-0.5 shadow-2xs group-hover:scale-105 transition-transform"
               referrerPolicy="no-referrer"
             />
             <div className="flex flex-col">

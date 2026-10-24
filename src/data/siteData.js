@@ -1346,8 +1346,15 @@ export const siteData = {
       description:
         "Take the first step toward aligning your energy field, clearing deep stressors, and restoring your original default state with Muazzam Abdul Rehman.",
       image: {
-        src: "/assets/aistudio/Balancing_stones_and_botanical_leaves_cdede477.png",
+        src: "public/assets/aistudio/inner_being_logo_1791870134219_08a12639.png",
         alt: "A calm private space prepared for a wellness consultation",
+      },
+      logo: {
+        // src: "public/assets/aistudio/sinner_being_logo_1791870134219_08a12639.png",
+        src: "/assets/aistudio/sinner_being_logo1.png",
+        alt: "Inner Being Wellness logo",
+        width: 600,
+        height: 600,
       },
     },
 

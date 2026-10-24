@@ -28,7 +28,7 @@ export default function AboutPage() {
   return (
     <div className="w-full bg-[#FBF9F5]">
       {/* 1. HERO SECTION */}
-      <section className="relative py-16 lg:py-24 border-b border-[#2D1C59]/10 bg-[#FAF7F2]">
+      {/* <section className="relative py-16 lg:py-24 border-b border-[#2D1C59]/10 bg-[#FAF7F2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#B88B4A]">
@@ -46,7 +46,45 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
+      </section> */}
+      
+      {/* 1. HERO SECTION */}
+      <section className="relative py-16 lg:py-24 border-b border-[#2D1C59]/10 bg-[#FAF7F2]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            
+            {/* Left: Existing Hero Content */}
+            <div className="max-w-3xl space-y-4">
+              <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#B88B4A]">
+                <span className="w-6 h-px bg-[#B88B4A]" />
+                {aboutPage.hero.badge}
+                <span className="w-6 h-px bg-[#B88B4A]" />
+              </div>
+
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif text-[#2D1C59] leading-[1.14]">
+                {aboutPage.hero.title}
+              </h1>
+
+              <p className="text-lg text-[#475A51] leading-relaxed">
+                {aboutPage.hero.subtitle}
+              </p>
+            </div>
+
+            {/* Right: Hero Image */}
+            <div className="w-full">
+              <div className="relative w-full overflow-hidden rounded-3xl">
+                <img
+                  src="/assets/aistudio/imagee.jpeg"
+                  alt="Inner Being Wellness"
+                  className="block w-full h-[280px] sm:h-[380px] lg:h-[460px] object-cover object-center"
+                />
+              </div>
+            </div>
+
+          </div>
+        </div>
       </section>
+
 
       {/* 2. FOUNDER STORY (FIXED WITH REAL FOUNDER PHOTO: image2_aedbb8dd.jpeg) */}
       <section className="py-20 lg:py-28 border-b border-[#2D1C59]/10 bg-[#FBF9F5]">
