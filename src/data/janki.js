@@ -1,3 +1,5 @@
+
+
 // // src/data/janki.js
 // const IMG = "/assets/aistudio";
 
@@ -19,7 +21,7 @@
 //     title: "Success shouldn't cost you your life.",
 //     intro:
 //       "Janki helps founders keep the ambition and drop the weight, so the business grows without costing them their sleep, their relationships or their joy in what they've built.",
-//     cta: { label: "Book a conversation", href: "/contact" },
+//     cta: { label: "Book a conversation", href: "/contact?interest=founder-coaching" },
 //   },
 
 //   what: {
@@ -107,29 +109,61 @@
 //       "TEDx speaker. Based in Mumbai",
 //     ],
 //   },
+
+//   // Inner Being Wellness ke andar dono practitioners alag dikhte hain
+//   alsoAt: {
+//     heading: "Also at Inner Being Wellness",
+//     name: "Muazzam Abdul Rehman",
+//     role: "Managing Director, Jusoor Facility Management",
+//     text: "Inner Being Wellness brings two practitioners under one brand, each with their own way of working.",
+//     cta: { label: "About Muazzam Abdul Rehman", href: "/about" },
+//   },
+
+//   // Home page spotlight
+//   spotlight: {
+//     badge: "ABOUT JANKI RAVANI",
+//     title: "Success shouldn't cost you your life.",
+//     cta: { label: "Read Janki's Story", href: "/janki" },
+//   },
 // };
 
 
 
 
-// new update 
 
+
+
+// new updated code 
 
 // src/data/janki.js
+import { COMMON_EMAIL } from "@/data/siteData";
+
 const IMG = "/assets/aistudio";
 
 export const jankiData = {
   name: "Janki Ravani",
   role: "Personal Coach to Founders & Leaders",
-  email: "connect@janki.ravani", // ⚠️ check: probably connect@jankiravani.in
+
+  // No separate email for Janki: all enquiries go to the common Inner Being address / booking.
+  email: COMMON_EMAIL,
   website: "JankiRavani.in",
   websiteUrl: "https://jankiravani.in",
+
+  meta: {
+    title: "About Janki Ravani | Inner Being Wellness",
+  },
 
   images: {
     hero: `${IMG}/Janki-28.jpg.jpeg`,
     portrait: `${IMG}/Janki-25.jpg.jpeg`,
     work: `${IMG}/Janki-29.jpg.jpeg`,
     about: `${IMG}/Janki-31.jpg.jpeg`,
+    alt: {
+      hero: "Janki Ravani, personal coach to founders and leaders",
+      portrait: "Janki Ravani smiling in a floral blazer",
+      work: "Janki Ravani seated, smiling",
+      about: "Janki Ravani, black and white portrait",
+    },
   },
 
   hero: {
@@ -137,6 +171,7 @@ export const jankiData = {
     intro:
       "Janki helps founders keep the ambition and drop the weight, so the business grows without costing them their sleep, their relationships or their joy in what they've built.",
     cta: { label: "Book a conversation", href: "/contact?interest=founder-coaching" },
+    emailLabel: "Email Inner Being Wellness",
   },
 
   what: {
@@ -199,6 +234,8 @@ export const jankiData = {
 
   shift: {
     heading: "The shift",
+    fromLabel: "From",
+    toLabel: "to",
     items: [
       { from: "proving", to: "contributing" },
       { from: "bottleneck", to: "leader" },
@@ -223,9 +260,11 @@ export const jankiData = {
       "Global Happiness Leader, World Happiness Congress 2020",
       "TEDx speaker. Based in Mumbai",
     ],
+    contactNote:
+      "All enquiries go through Inner Being Wellness. Book a conversation first, or write to us at our common email address.",
   },
 
-  // Inner Being Wellness ke andar dono practitioners alag dikhte hain
+  // Both practitioners appear separately under Inner Being Wellness
   alsoAt: {
     heading: "Also at Inner Being Wellness",
     name: "Muazzam Abdul Rehman",
@@ -241,3 +280,5 @@ export const jankiData = {
     cta: { label: "Read Janki's Story", href: "/janki" },
   },
 };
+
+export default jankiData;

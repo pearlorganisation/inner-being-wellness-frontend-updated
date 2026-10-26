@@ -1,4 +1,4 @@
-// new updated code .>>
+﻿export const COMMON_EMAIL = "hello@innerbeingwellness.com";
 
 export const siteData = {
   brand: {
@@ -10,7 +10,7 @@ export const siteData = {
     logoText: "IBW",
     logoImage: "/assets/aistudio/sinner_being_logo.png",
     contact: {
-      email: "hello@innerbeingwellness.com",
+      email: COMMON_EMAIL,
       responseTime: "We aim to respond within two working days.",
       serviceMode:
         "Private frequency sessions and bioenergetic wellness guidance",
@@ -32,52 +32,23 @@ export const siteData = {
   },
 
   /**
-   * Design tokens used by HomePage (Figma: purple + teal + gold on off-white).
-   * Green chahiye to sirf yahan values badlo — component me kuch touch nahi karna.
+   * Design tokens used by HomePage (purple + teal + gold on off-white).
+   * To change the look, only change the values here.
    */
   theme: {
-    primary: "#35146E", // "Rewire Within." + headings + active nav
-    secondary: "#0F6F73", // "Live Freely." teal
+    primary: "#35146E",
+    secondary: "#0F6F73",
     gold: "#C59B27",
     goldLight: "#F3CF63",
-    ink: "#445064", // body text
-    muted: "#7A8599", // small meta text
-    surface: "#FAFAF7", // page bg (off-white)
-    surfaceAlt: "#F6F3EC", // alternate section bg
+    ink: "#445064",
+    muted: "#7A8599",
+    surface: "#FAFAF7",
+    surfaceAlt: "#F6F3EC",
     card: "#FFFFFF",
-    dark: "#241049", // dark banner section
-    line: "rgba(53, 20, 110, 0.10)", // borders
+    dark: "#241049",
+    line: "rgba(53, 20, 110, 0.10)",
   },
 
-  // navigation: {
-  //   headerLinks: [
-  //     { label: "Home", href: "/", id: "home" },
-  //     // { label: "About Us", href: "/about", id: "about" },
-  //     {
-  //       label: "About Us",
-  //       href: "/about",
-  //       id: "about",
-  //       children: [
-  //         { label: "About Muazzam Abdul Rehman", href: "/about" },
-  //         { label: "About Janki Ravani", href: "/janki" },
-  //       ],
-  //     },
-
-  //     { label: "Offerings", href: "/offerings", id: "offerings" },
-  //     {
-  //       label: "Freedom from Resistance",
-  //       href: "/freedom-from-resistance",
-  //       id: "freedom-from-resistance",
-  //     },
-  //     { label: "Thoughts", href: "/thoughts", id: "thoughts" },
-  //     { label: "Contact", href: "/contact", id: "contact" },
-  //   ],
-  //   ctaButton: {
-  //     label: "Book a Session",
-  //     href: "/contact",
-  //     action: "scrollToContactForm",
-  //   },
-  // },
   navigation: {
     headerLinks: [
       { label: "Home", href: "/", id: "home" },
@@ -105,17 +76,15 @@ export const siteData = {
       action: "scrollToContactForm",
     },
   },
+
   /**
-   * Landing page nav (as in Figma header):
-   * Home · Manifesto · Founder · Defaults · Frequencies · Reflections
-   * Header component me `siteData.landingNav` use karo jab home page pe ho.
-   * href "#id" => HomePage ke section ids (homePage.sectionIds) se match karta hai.
+   * Landing page nav: Home, Manifesto, Founder, Defaults, Frequencies, Reflections.
+   * "#id" hrefs match homePage.sectionIds.
    */
   landingNav: {
     links: [
       { label: "Home", href: "#home", id: "home" },
       { label: "Manifesto", href: "#manifesto", id: "manifesto" },
-      // { label: "Founder", href: "#founder", id: "founder" },
       {
         label: "Founder",
         href: "#founder",
@@ -141,7 +110,6 @@ export const siteData = {
         "Frequency-based energy healing, subconscious reprogramming and conscious awareness with Muazzam Abdul Rehman in Abu Dhabi & Dubai. Fix the Being first, and the Doing will naturally follow.",
     },
 
-    // Section anchors (used by landingNav + footer "/#four-defaults")
     sectionIds: {
       hero: "home",
       introduction: "introduction",
@@ -156,7 +124,6 @@ export const siteData = {
 
     hero: {
       badge: "INNER BEING WELLNESS • ABU DHABI & DUBAI",
-      // Each line has its own tone: "primary" | "secondary" | "gold"
       titleLines: [
         { text: "Fix the Being first,", tone: "primary" },
         { text: "and the Doing will naturally follow.", tone: "secondary" },
@@ -167,9 +134,7 @@ export const siteData = {
         label: "Begin Your Transformation",
         href: "/contact",
       },
-      // Figma me sirf ek CTA hai. Secondary chahiye to object de do: { label, href }
       secondaryCta: null,
-      // Left edge ki watercolor botanical border (Figma). Asset na mile to SVG leaves fallback chalte hain.
       botanicalBorder: {
         src: "/assets/aistudio/Botanical_border_880a09be.png",
       },
@@ -217,13 +182,10 @@ export const siteData = {
     },
 
     manifesto: {
-      // Figma: title ke upar gold lotus ornament (eyebrow text nahi). Text chahiye to eyebrow: "..." do.
       ornament: "Lotus",
       eyebrow: null,
       title: "Our Manifesto",
       subtitle: "Fix the BEING, and the Doing will naturally follow.",
-      // icon: "Leaf" | "Lotus" | "Sun" | "Heart" (lucide + custom Lotus)
-      // color = emblem circle tint, accentColor = icon stroke
       pillars: [
         {
           id: "awareness",
@@ -639,34 +601,13 @@ export const siteData = {
     values: {
       title: "Our Original Default Settings",
       items: [
-        {
-          title: "Love",
-          description: "Unconditional source resonance.",
-        },
-        {
-          title: "Peace",
-          description: "Unshakable inner calm.",
-        },
-        {
-          title: "Joy",
-          description: "Spontaneous lightness of being.",
-        },
-        {
-          title: "Contentment",
-          description: "Deep fulfilment in the now.",
-        },
-        {
-          title: "Truth",
-          description: "Authentic self-expression.",
-        },
-        {
-          title: "Purity",
-          description: "A clear energetic container.",
-        },
-        {
-          title: "Honesty",
-          description: "Radical internal integrity.",
-        },
+        { title: "Love", description: "Unconditional source resonance." },
+        { title: "Peace", description: "Unshakable inner calm." },
+        { title: "Joy", description: "Spontaneous lightness of being." },
+        { title: "Contentment", description: "Deep fulfilment in the now." },
+        { title: "Truth", description: "Authentic self-expression." },
+        { title: "Purity", description: "A clear energetic container." },
+        { title: "Honesty", description: "Radical internal integrity." },
       ],
     },
 
@@ -1337,20 +1278,19 @@ export const siteData = {
     meta: {
       title: "Schedule Your Inner Being Session | Inner Being Wellness",
       description:
-        "Book a frequency protocol session with Muazzam Abdul Rehman at Inner Being Wellness in Abu Dhabi & Dubai.",
+        "Book a session or send an enquiry to Inner Being Wellness in Abu Dhabi & Dubai.",
     },
 
     hero: {
       badge: "BEGIN YOUR TRANSFORMATION",
       title: "Schedule Your Inner Being Session",
       description:
-        "Take the first step toward aligning your energy field, clearing deep stressors, and restoring your original default state with Muazzam Abdul Rehman.",
+        "Take the first step toward aligning your energy field, clearing deep stressors, and restoring your original default state with Inner Being Wellness.",
       image: {
-        src: "public/assets/aistudio/inner_being_logo_1791870134219_08a12639.png",
+        src: "/assets/aistudio/yoga_sunroom_1791868806713_7e114c37.jpg",
         alt: "A calm private space prepared for a wellness consultation",
       },
       logo: {
-        // src: "public/assets/aistudio/sinner_being_logo_1791870134219_08a12639.png",
         src: "/assets/aistudio/sinner_being_logo1.png",
         alt: "Inner Being Wellness logo",
         width: 600,
@@ -1363,8 +1303,8 @@ export const siteData = {
         id: "email",
         icon: "Mail",
         title: "Email",
-        value: "hello@innerbeingwellness.com",
-        href: "mailto:hello@innerbeingwellness.com",
+        value: COMMON_EMAIL,
+        href: `mailto:${COMMON_EMAIL}`,
         description: "For session enquiries and general questions.",
       },
       {
@@ -1414,32 +1354,6 @@ export const siteData = {
           placeholder: "Include country code (e.g. +971 50 123 4567)",
           required: false,
         },
-        // {
-        //   id: "interest",
-        //   name: "interest",
-        //   label: "Primary Frequency Protocol",
-        //   type: "select",
-        //   required: true,
-        //   options: [
-        //     { label: "Chakra Balancing Frequency", value: "chakra-balancing" },
-        //     { label: "Holistic Health Frequency", value: "holistic-health" },
-        //     { label: "Prosperity Frequency", value: "prosperity" },
-        //     { label: "Cell Harmony Frequency", value: "cell-harmony" },
-        //     { label: "Prostate Harmony Frequency", value: "prostate-harmony" },
-        //     { label: "Vagus Frequency", value: "vagus" },
-        //     { label: "Mental Clarity Frequency", value: "mental-clarity" },
-        //     { label: "Detoxify Frequency", value: "detoxify" },
-        //     {
-        //       label: "Negative Entities Clearance Frequency",
-        //       value: "negative-entities-clearance",
-        //     },
-        //     {
-        //       label: "Freedom from Resistance (Signature)",
-        //       value: "freedom-from-resistance",
-        //     },
-        //     { label: "General Wellness Enquiry", value: "general-enquiry" },
-        //   ],
-        // },
         {
           id: "interest",
           name: "interest",
@@ -1582,7 +1496,7 @@ export const siteData = {
     brandName: "INNER BEING WELLNESS",
     tagline: "Fix the Being first, and the Doing will naturally follow.",
     description:
-      "Frequency-based energy healing, subconscious reprogramming and conscious awareness with Muazzam Abdul Rehman.",
+      "Frequency-based energy healing, subconscious reprogramming and conscious awareness with Muazzam Abdul Rehman and Janki Ravani.",
     columns: [
       {
         title: "Quick Links",
@@ -1626,8 +1540,8 @@ export const siteData = {
         details: [
           {
             label: "Email",
-            value: "hello@innerbeingwellness.com",
-            href: "mailto:hello@innerbeingwellness.com",
+            value: COMMON_EMAIL,
+            href: `mailto:${COMMON_EMAIL}`,
           },
           {
             label: "Location",

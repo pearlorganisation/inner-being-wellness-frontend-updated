@@ -27,7 +27,7 @@ function Title({ lines }) {
           {line.map((p, j) => (
             <span
               key={j}
-              className={`${TONES[p.tone] || TONES.purple} ${p.italic ? "italic" : ""}`}
+              className={`${TONES[p.tone] || TONES.purple } ${p.italic ? "italic" : ""}`}
             >
               {p.text}
             </span>

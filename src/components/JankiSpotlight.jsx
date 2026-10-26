@@ -1,6 +1,6 @@
 // src/components/JankiSpotlight.jsx
 // Home page par Founder section ke baad lagao: <JankiSpotlight />
-import Image from "next/image";
+import Image from "next/image";               
 import { jankiData as d } from "@/data/janki";
 import Button from "@/components/ui/Button";
 

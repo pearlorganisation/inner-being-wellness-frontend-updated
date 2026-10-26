@@ -76,7 +76,7 @@ export default function AboutPage() {
                 <img
                   src="/assets/aistudio/imagee.jpeg"
                   alt="Inner Being Wellness"
-                  className="block w-full h-[280px] sm:h-[380px] lg:h-[460px] object-cover object-center"
+                  className="block w-full h-[280px] sm:h-[380px] lg:h-[460px] object-cover object-center opc"
                 />
               </div>
             </div>
