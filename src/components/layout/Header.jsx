@@ -490,7 +490,8 @@ const navLinks = [
     ],
   },
   { label: "Product", href: "/freedom-from-resistance", id: "product" },
-  { label: "Frequencies", href: "/offerings", id: "programs" },
+  // { label: "Frequencies", href: "/offerings", id: "programs" },
+  { label: "Frequencies", href: "/offerings#protocols", id: "programs" },
   { label: "Defaults", href: "/#four-defaults", id: "defaults" },
   { label: "Contact", href: "/contact", id: "contact" },
 ];

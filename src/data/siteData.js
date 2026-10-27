@@ -640,11 +640,56 @@ export const siteData = {
         label: "Find Your Starting Point",
         href: "/contact",
       },
+      secondaryCta: {
+        label: "View all protocols",
+        href: "/viewallprotocols",
+      },
+      highlight: {
+        title: "{count} frequency protocols",
+        text: "Pre- and post-session biofield measurement and HRV tracking",
+      },
+      // highlight: {
+      //   title: "9 frequency protocols",
+      //   text: "Pre- and post-session biofield measurement and HRV tracking",
+      // },
+      pillars: [
+        {
+          icon: "Waves",
+          title: "Clear blockages",
+          text: "Release the mental, emotional and energetic static that holds you back.",
+        },
+        {
+          icon: "Scale",
+          title: "Restore equilibrium",
+          text: "Support the body's natural biological balance and nervous-system calm.",
+        },
+        {
+          icon: "Compass",
+          title: "Align your energy",
+          text: "Tune your energy state across specialized dimensions.",
+        },
+      ],
+      media: "image",
       image: {
-        src: "/assets/aistudio/program_mind_balance_1791870134219_0c50a090.jpg",
-        alt: "A peaceful holistic wellness space with yoga and sound instruments",
+        src: "/assets/aistudio/bioresonance-hero.jpg",
+        alt: "A woman meditating beside a laptop showing her biofield and heart-rate data, with a glowing energy-body hologram",
       },
     },
+
+    // hero: {
+    //   badge: "ADVANCED BIORESONANCE",
+    //   title: "Frequency-Based Energy Healing Protocols",
+    //   description:
+    //     "We blend deep inner awareness with modern frequency technology to clear blockages, restore biological equilibrium, and align your energy state across specialized dimensions.",
+    //   primaryCta: {
+    //     label: "Find Your Starting Point",
+    //     href: "/contact",
+    //   },
+    //   image: {
+    //     src: "/assets/aistudio/program_mind_balance_1791870134219_0c50a090.jpg",
+    //     alt: "A peaceful holistic wellness space with yoga and sound instruments",
+    //   },
+    // },
 
     introduction: {
       title: "Human Touch Meets Modern Technology",
