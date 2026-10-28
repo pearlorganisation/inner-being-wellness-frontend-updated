@@ -1,12 +1,18 @@
+
 node_modules/
 build/
 dist/
-coverage/
-.DS_Store
-*.log
-.env*
-!.env.example
-   .next/
-   next-env.d.ts
 .next/
+coverage/
+
+# Ignore all environment files
+.env*
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+
+# Next.js
 next-env.d.ts
