@@ -365,8 +365,7 @@ export default function OfferingsPage() {
           </div>
         </section>
       )}
-
-      {/* 4. PROTOCOL DETAILS */}
+     
       {services.length > 0 && (
         <section
           id="protocol-details"
