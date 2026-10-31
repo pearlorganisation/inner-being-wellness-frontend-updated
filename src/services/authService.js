@@ -13,3 +13,8 @@ export const loginCustomerApi = async (payload) => {
   const { data } = await api.post("/customer/login", payload);
   return data; // { access_token, token_type, user }
 };
+
+
+
+
+
