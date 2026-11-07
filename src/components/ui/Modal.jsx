@@ -1,12 +1,17 @@
+// src/components/ui/Modal.jsx
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 
-/**
- * Accessible Modal Component
- */
-export default function Modal({ isOpen, onClose, title, children, maxWidth = "max-w-2xl" }) {
+export default function Modal({ isOpen, onClose, title, children, maxWidth = "max-w-3xl" }) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Escape" && isOpen) {
@@ -23,41 +28,47 @@ export default function Modal({ isOpen, onClose, title, children, maxWidth = "ma
     };
   }, [isOpen, onClose]);
 
-  if (!isOpen) return null;
+  if (!mounted || !isOpen) return null;
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
-      {/* Backdrop */}
+  // createPortal renders the modal directly into document.body
+  // This prevents any parent CSS (like overflow-clip or transform) from breaking the fixed positioning.
+  return createPortal(
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 overflow-hidden">
+      
+      {/* Dark Blurred Backdrop */}
       <div
-        className="fixed inset-0 bg-black/50 backdrop-blur-xs transition-opacity"
+        className="absolute inset-0 bg-[#1A1625]/70 backdrop-blur-sm transition-opacity"
         onClick={onClose}
         aria-hidden="true"
       />
 
-      {/* Modal Dialog */}
+      {/* Modal Dialog Box */}
       <div
         role="dialog"
         aria-modal="true"
         aria-labelledby="modal-title"
-        className={`relative w-full ${maxWidth} bg-[#FAF7F2] rounded-xl shadow-2xl border border-[#D8CFBF] overflow-hidden z-10 transition-all my-8 max-h-[90vh] flex flex-col`}
+        className={`relative flex w-full ${maxWidth} max-h-[85vh] flex-col overflow-hidden rounded-[2rem] bg-white shadow-2xl shadow-black/20 transition-all`}
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-[#E5DCCF] bg-[#F4EFE6]">
-          <h3 id="modal-title" className="text-xl font-serif text-[#1A2C24]">
+        <div className="flex shrink-0 items-center justify-between border-b border-slate-100 px-6 py-5 sm:px-8">
+          <h3 id="modal-title" className="pr-4 font-serif text-xl font-bold text-[#2D1C59] sm:text-2xl line-clamp-1">
             {title}
           </h3>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg text-[#66776F] hover:text-[#1A2C24] hover:bg-[#E8E1D4] transition-colors cursor-pointer"
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#FBF9F5] text-[#52665B] transition-all hover:bg-[#EAE4D7] hover:text-[#2D1C59]"
             aria-label="Close dialog"
           >
-            <X className="w-5 h-5" />
+            <X className="h-5 w-5" />
           </button>
         </div>
 
-        {/* Content */}
-        <div className="p-6 overflow-y-auto">{children}</div>
+        {/* Scrollable Body */}
+        <div className="overflow-y-auto p-6 sm:p-8">
+          {children}
+        </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

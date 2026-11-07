@@ -1,3 +1,8 @@
+
+
+
+
+
 // "use client";
 
 // import { useState, useEffect, useRef } from "react";
@@ -9,17 +14,20 @@
 // import Button from "@/components/ui/Button";
 
 // /* -------------------------------------------------------------------------- */
-// /*  NAV CONFIG (single source of truth)                                        */
-// /*  placement: "main" -> navbar me seedha | "more" -> More dropdown me         */
-// /*  Mobile drawer isi array ke order me banta hai.                             */
+// /*  CONFIG                                                                     */
 // /* -------------------------------------------------------------------------- */
+// // ⚠️ public/ folder me jo asli logo file hai uska path yahan rakho
+// const LOGO_SRC = "/assets/aistudio/sinner_being_logo.png";
+// const BOOK_SESSION_HREF = "/contact#contact-form";
+
+// /*  placement: "main" -> navbar me seedha | "more" -> More dropdown me         */
+// /*  Mobile drawer isi array ke order me banta hai (isliye order logical hai).  */
 // const NAV_ITEMS = [
 //   { label: "Home", href: "/", id: "home", placement: "main" },
-//   { label: "Manifesto", href: "/#manifesto", id: "manifesto", placement: "more" },
 //   {
 //     label: "Founder",
 //     href: "/about",
-//     id: "founder",     
+//     id: "founder",
 //     placement: "main",
 //     children: [
 //       { label: "About Muazzam Abdul Rehman", href: "/about" },
@@ -27,9 +35,10 @@
 //     ],
 //   },
 //   { label: "Product", href: "/freedom-from-resistance", id: "product", placement: "main" },
-//   { label: "Frequencies", href: "/offerings", id: "programs", placement: "main" },
+//   { label: "Frequencies", href: "/offerings", id: "frequencies", placement: "main" },
+//   { label: "Manifesto", href: "/#manifesto", id: "manifesto", placement: "more" },
 //   { label: "Defaults", href: "/#four-defaults", id: "defaults", placement: "more" },
-//     { label: "Reflections", href: "/reflections", id: "Reflections", placement: "more" },
+//   { label: "Reflections", href: "/reflections", id: "reflections", placement: "more" },
 //   { label: "Contact", href: "/contact", id: "contact", placement: "more" },
 // ];
 
@@ -92,7 +101,10 @@
 //   };
 
 //   useEffect(() => () => clearTimeout(closeTimer.current), []);
-//   useEffect(() => setOpen(false), [currentPath]);
+
+//   useEffect(() => {
+//     setOpen(false);
+//   }, [currentPath]);
 
 //   useEffect(() => {
 //     const onClick = (e) => {
@@ -107,7 +119,8 @@
 //     };
 //   }, []);
 
-//   const alignClass = align === "right" ? "right-0 origin-top-right" : "left-1/2 -translate-x-1/2";
+//   const alignClass =
+//     align === "right" ? "right-0 origin-top-right" : "left-1/2 -translate-x-1/2";
 
 //   return (
 //     <div
@@ -215,9 +228,9 @@
 //     };
 //   }, []);
 
-//   // desktop size par jaye to mobile menu band
+//   // desktop size (xl) par jaye to mobile menu band
 //   useEffect(() => {
-//     const mq = window.matchMedia("(min-width: 1024px)");
+//     const mq = window.matchMedia("(min-width: 1280px)");
 //     const onChange = (e) => e.matches && setMobileMenuOpen(false);
 //     mq.addEventListener("change", onChange);
 //     return () => mq.removeEventListener("change", onChange);
@@ -248,29 +261,33 @@
 //       }`}
 //     >
 //       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-//         <div className="flex items-center justify-between gap-3 lg:gap-4">
-//           {/* Logo (shrink-0: text kabhi cut nahi hoga) */}
-//           <Link href="/" onClick={closeMenu} className="group flex shrink-0 items-center gap-2 sm:gap-3">
+//         <div className="flex items-center justify-between gap-3 xl:gap-4">
+//           {/* Logo */}
+//           <Link
+//             href="/"
+//             onClick={closeMenu}
+//             className="group flex min-w-0 shrink-0 items-center gap-2 sm:gap-3"
+//           >
 //             <img
-//               src="/assets/aistudio/sinner_being_logo.png"
+//               src={LOGO_SRC}
 //               alt="Inner Being Wellness logo"
-//               className="h-11 w-11 shrink-0 rounded-full bg-white/80 object-contain p-0.5 shadow-sm transition-transform group-hover:scale-105 sm:h-12 sm:w-12 xl:h-16 xl:w-16"
+//               className="h-10 w-10 shrink-0 rounded-full bg-transparent object-contain p-0.5 shadow-sm transition-transform group-hover:scale-105 sm:h-12 sm:w-12 xl:h-16 xl:w-16"
 //               referrerPolicy="no-referrer"
 //             />
 //             <div className="flex flex-col whitespace-nowrap">
-//               <span className="font-serif text-sm font-bold leading-tight tracking-wider text-[#1E255E] sm:text-base xl:text-lg">
+//               <span className="font-serif text-[13px] font-bold leading-tight tracking-wider text-[#1E255E] min-[400px]:text-sm sm:text-base xl:text-lg">
 //                 INNER BEING
 //               </span>
-//               <span className="font-sans text-[9px] font-semibold uppercase leading-none tracking-[0.25em] text-[#C5A265] sm:text-[10px]">
+//               <span className="font-sans text-[8px] font-semibold uppercase leading-none tracking-[0.25em] text-[#C5A265] min-[400px]:text-[9px] sm:text-[10px]">
 //                 WELLNESS
 //               </span>
 //             </div>
 //           </Link>
 
-//           {/* Desktop nav: sirf main links + More */}
+//           {/* Desktop nav (xl+): main links + More */}
 //           <nav
 //             aria-label="Main navigation"
-//             className="hidden items-center text-sm font-medium lg:flex lg:gap-0.5 xl:gap-2"
+//             className="hidden items-center text-sm font-medium xl:flex xl:gap-1 2xl:gap-2"
 //           >
 //             {mainLinks.map((link) => {
 //               const isActive = isLinkActive(link, currentPath);
@@ -312,7 +329,7 @@
 //           <div className="flex shrink-0 items-center gap-2 sm:gap-3">
 //             {/* Auth (desktop only) */}
 //             {hydrated && (
-//               <div className="hidden lg:block">
+//               <div className="hidden xl:block">
 //                 {user ? (
 //                   <div ref={userMenuRef} className="relative">
 //                     <button
@@ -376,18 +393,18 @@
 //               </div>
 //             )}
 
-//             {/* Book Session (sm and up) */}
+//             {/* Book Session (sm and up) -> contact form tak scroll */}
 //             <div className="hidden whitespace-nowrap sm:block">
-//               <Button variant="primary" size="sm" href="/contact" onClick={closeMenu}>
+//               <Button variant="primary" size="sm" href={BOOK_SESSION_HREF} onClick={closeMenu}>
 //                 Book Session
 //               </Button>
 //             </div>
 
-//             {/* Hamburger -> X */}
+//             {/* Hamburger -> X (xl se neeche) */}
 //             <button
 //               type="button"
 //               onClick={() => setMobileMenuOpen((v) => !v)}
-//               className="rounded-full p-2 text-[#2D1C59] transition-colors hover:bg-[#2D1C59]/10 lg:hidden"
+//               className="rounded-full p-2 text-[#2D1C59] transition-colors hover:bg-[#2D1C59]/10 xl:hidden"
 //               aria-label="Toggle navigation menu"
 //               aria-expanded={mobileMenuOpen}
 //               aria-controls="mobile-drawer"
@@ -418,7 +435,7 @@
 //       <div
 //         onClick={closeMenu}
 //         aria-hidden="true"
-//         className={`absolute inset-x-0 top-full -z-10 h-[100dvh] bg-[#1E255E]/20 transition-opacity duration-300 lg:hidden ${
+//         className={`absolute inset-x-0 top-full -z-10 h-[100dvh] bg-[#1E255E]/20 transition-opacity duration-300 xl:hidden ${
 //           mobileMenuOpen ? "opacity-100" : "pointer-events-none opacity-0"
 //         }`}
 //       />
@@ -427,7 +444,7 @@
 //       <div
 //         id="mobile-drawer"
 //         aria-hidden={!mobileMenuOpen}
-//         className={`absolute inset-x-0 top-full max-h-[calc(100dvh-4.5rem)] overflow-y-auto border-b border-[#2D1C59]/15 bg-[#FAF7F2] px-4 pb-6 pt-3 shadow-xl transition-[opacity,transform,visibility] duration-200 ease-out sm:px-6 lg:hidden ${
+//         className={`absolute inset-x-0 top-full max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain border-b border-[#2D1C59]/15 bg-[#FAF7F2] px-4 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-3 shadow-xl transition-[opacity,transform,visibility] duration-200 ease-out sm:px-6 xl:hidden ${
 //           mobileMenuOpen
 //             ? "visible translate-y-0 opacity-100"
 //             : "invisible pointer-events-none -translate-y-2 opacity-0"
@@ -544,7 +561,7 @@
 //               variant="primary"
 //               size="md"
 //               className="w-full justify-center"
-//               href="/contact"
+//               href={BOOK_SESSION_HREF}
 //               onClick={closeMenu}
 //             >
 //               Book Session
@@ -556,7 +573,12 @@
 //   );
 // }
 
-// new updated code 
+
+
+
+
+// updated code as per client requirement
+
 
 
 
@@ -576,9 +598,11 @@ import Button from "@/components/ui/Button";
 /* -------------------------------------------------------------------------- */
 /*  CONFIG                                                                     */
 /* -------------------------------------------------------------------------- */
-// ⚠️ public/ folder me jo asli logo file hai uska path yahan rakho
+// SVG / transparent logo milte hi sirf yeh path badalna hai (e.g. "/assets/logo.svg")
+// SVG lagne ke baad logo <img> se "mix-blend-multiply" class bhi hata dena.
 const LOGO_SRC = "/assets/aistudio/sinner_being_logo.png";
 const BOOK_SESSION_HREF = "/contact#contact-form";
+const CTA_LABEL = "Book Free Discovery Call";
 
 /*  placement: "main" -> navbar me seedha | "more" -> More dropdown me         */
 /*  Mobile drawer isi array ke order me banta hai (isliye order logical hai).  */
@@ -596,7 +620,7 @@ const NAV_ITEMS = [
   },
   { label: "Product", href: "/freedom-from-resistance", id: "product", placement: "main" },
   { label: "Frequencies", href: "/offerings", id: "frequencies", placement: "main" },
-  { label: "Manifesto", href: "/#manifesto", id: "manifesto", placement: "more" },
+  { label: "Manifesto", href: "/manifesto", id: "manifesto", placement: "more" },
   { label: "Defaults", href: "/#four-defaults", id: "defaults", placement: "more" },
   { label: "Reflections", href: "/reflections", id: "reflections", placement: "more" },
   { label: "Contact", href: "/contact", id: "contact", placement: "more" },
@@ -612,18 +636,20 @@ const isLinkActive = (link, currentPath) => {
 };
 
 /* ------------------------------ shared styles ----------------------------- */
+// NOTE: Tailwind v4 me translate-* "translate" property use karta hai, "transform" nahi.
+// Isliye transition list me "translate" bhi zaroori hai, warna slide animate nahi hota.
 const panelBase =
-  "origin-top transition-[opacity,transform,visibility] duration-150 ease-out";
+  "origin-top transition-[opacity,transform,translate,visibility] duration-200 ease-out motion-reduce:transition-none";
 const panelState = (open) =>
   open
     ? "visible translate-y-0 opacity-100"
     : "invisible pointer-events-none -translate-y-1 opacity-0";
 
 const navItemClass = (active) =>
-  `relative inline-flex items-center gap-1 whitespace-nowrap rounded-full px-3 py-1.5 transition-colors duration-200 ${
+  `relative inline-flex items-center gap-1 whitespace-nowrap rounded-full px-3 py-1.5 transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-metallic ${
     active
-      ? "bg-[#2D1C59]/[0.07] font-semibold text-[#2D1C59]"
-      : "text-[#586860] hover:text-[#2D1C59]"
+      ? "bg-purple-royal/[0.07] font-semibold text-purple-royal"
+      : "text-text-muted hover:text-purple-royal after:absolute after:inset-x-3 after:bottom-0 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-gold-metallic after:transition-transform after:duration-300 hover:after:scale-x-100 motion-reduce:after:transition-none"
   }`;
 
 /* --------------------------------- Avatar --------------------------------- */
@@ -632,12 +658,12 @@ function Avatar({ user, size = "h-9 w-9" }) {
     <img
       src={user.profile_pic}
       alt={user.name || "Profile"}
-      className={`${size} shrink-0 rounded-full object-cover ring-1 ring-[#2D1C59]/20`}
+      className={`${size} shrink-0 rounded-full object-cover ring-1 ring-purple-royal/20`}
       referrerPolicy="no-referrer"
     />
   ) : (
     <span
-      className={`${size} flex shrink-0 items-center justify-center rounded-full bg-[#2D1C59] text-sm font-semibold text-white`}
+      className={`${size} flex shrink-0 items-center justify-center rounded-full bg-purple-royal text-sm font-semibold text-white`}
     >
       {user.name?.[0]?.toUpperCase()}
     </span>
@@ -699,7 +725,7 @@ function DesktopDropdown({ label, items, isActive, currentPath, align = "center"
       >
         {label}
         <ChevronDown
-          className={`h-3.5 w-3.5 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          className={`h-4 w-4 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
         />
       </button>
 
@@ -707,7 +733,7 @@ function DesktopDropdown({ label, items, isActive, currentPath, align = "center"
         <div
           role="menu"
           aria-hidden={!open}
-          className="w-64 rounded-xl border border-[#2D1C59]/10 bg-white p-2 shadow-xl"
+          className="w-72 rounded-xl border border-purple-royal/10 bg-white p-2 shadow-xl"
         >
           {items.map((child) => {
             const childActive = !child.href.includes("#") && currentPath === child.href;
@@ -720,8 +746,8 @@ function DesktopDropdown({ label, items, isActive, currentPath, align = "center"
                 onClick={() => setOpen(false)}
                 className={`block rounded-lg px-4 py-2.5 text-sm transition-colors ${
                   childActive
-                    ? "bg-[#2D1C59]/10 font-semibold text-[#2D1C59]"
-                    : "text-[#586860] hover:bg-[#2D1C59]/5 hover:text-[#2D1C59]"
+                    ? "bg-purple-royal/10 font-semibold text-purple-royal"
+                    : "text-text-muted hover:bg-purple-royal/5 hover:text-purple-royal"
                 }`}
               >
                 {child.label}
@@ -812,12 +838,20 @@ export default function Header() {
 
   const isMoreActive = moreLinks.some((l) => isLinkActive(l, currentPath));
 
+  // mobile drawer items ka stagger (open hone par ek ke baad ek aate hain)
+  const staggerClass = `transition-[opacity,transform,translate] duration-300 ease-out motion-reduce:transition-none ${
+    mobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
+  }`;
+  const stagger = (i) => ({
+    transitionDelay: mobileMenuOpen ? `${60 + i * 35}ms` : "0ms",
+  });
+
   return (
     <header
-      className={`sticky top-0 z-40 w-full border-b border-[#2D1C59]/10 transition-all duration-300 ${
+      className={`sticky top-0 z-40 w-full border-b border-purple-royal/10 transition-all duration-300 ${
         scrolled
-          ? "bg-[#FBF9F5]/95 py-2 shadow-sm backdrop-blur-md"
-          : "bg-[#FBF9F5] py-2 sm:py-3"
+          ? "bg-offwhite/95 py-2 shadow-sm backdrop-blur-md"
+          : "bg-offwhite py-2 sm:py-3"
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -828,17 +862,20 @@ export default function Header() {
             onClick={closeMenu}
             className="group flex min-w-0 shrink-0 items-center gap-2 sm:gap-3"
           >
+            {/* mix-blend-multiply: PNG ka white background page ke off-white me mil jata hai */}
             <img
               src={LOGO_SRC}
               alt="Inner Being Wellness logo"
-              className="h-10 w-10 shrink-0 rounded-full bg-transparent object-contain p-0.5 shadow-sm transition-transform group-hover:scale-105 sm:h-12 sm:w-12 xl:h-16 xl:w-16"
+              className="h-10 w-10 shrink-0 bg-transparent object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105 sm:h-12 sm:w-12 xl:h-16 xl:w-16"
               referrerPolicy="no-referrer"
             />
             <div className="flex flex-col whitespace-nowrap">
-              <span className="font-serif text-[13px] font-bold leading-tight tracking-wider text-[#1E255E] min-[400px]:text-sm sm:text-base xl:text-lg">
+              {/* +2px: 15px -> 17px */}
+              <span className="font-serif text-[17px] font-bold leading-tight tracking-wider text-purple-royal min-[400px]:text-base sm:text-lg xl:text-xl">
                 INNER BEING
               </span>
-              <span className="font-sans text-[8px] font-semibold uppercase leading-none tracking-[0.25em] text-[#C5A265] min-[400px]:text-[9px] sm:text-[10px]">
+              {/* +2px: 10px -> 12px, 11px -> 13px */}
+              <span className="font-sans text-[12px] font-semibold uppercase leading-none tracking-[0.25em] text-gold-metallic min-[400px]:text-[13px] sm:text-xs">
                 WELLNESS
               </span>
             </div>
@@ -897,14 +934,14 @@ export default function Header() {
                       onClick={() => setUserMenuOpen((v) => !v)}
                       aria-haspopup="menu"
                       aria-expanded={userMenuOpen}
-                      className="flex items-center gap-2 rounded-full p-1 pr-3 transition-colors hover:bg-[#2D1C59]/5"
+                      className="flex items-center gap-2 rounded-full p-1 pr-3 transition-colors hover:bg-purple-royal/5"
                     >
                       <Avatar user={user} />
-                      <span className="max-w-[90px] truncate text-sm font-medium text-[#2D1C59]">
+                      <span className="max-w-[100px] truncate text-sm font-medium text-purple-royal">
                         {user.name?.split(" ")[0]}
                       </span>
                       <ChevronDown
-                        className={`h-3.5 w-3.5 text-[#586860] transition-transform duration-200 ${
+                        className={`h-4 w-4 text-text-muted transition-transform duration-200 ${
                           userMenuOpen ? "rotate-180" : ""
                         }`}
                       />
@@ -913,20 +950,20 @@ export default function Header() {
                     <div
                       role="menu"
                       aria-hidden={!userMenuOpen}
-                      className={`absolute right-0 top-full z-50 mt-2 w-60 origin-top-right rounded-xl border border-[#2D1C59]/10 bg-white p-2 shadow-xl ${panelBase} ${panelState(
+                      className={`absolute right-0 top-full z-50 mt-2 w-64 origin-top-right rounded-xl border border-purple-royal/10 bg-white p-2 shadow-xl ${panelBase} ${panelState(
                         userMenuOpen
                       )}`}
                     >
-                      <div className="border-b border-[#2D1C59]/10 px-3 pb-2 pt-1">
-                        <p className="truncate text-sm font-semibold text-[#2D1C59]">{user.name}</p>
-                        <p className="truncate text-xs text-[#586860]">{user.email}</p>
+                      <div className="border-b border-purple-royal/10 px-3 pb-2 pt-1">
+                        <p className="truncate text-sm font-semibold text-purple-royal">{user.name}</p>
+                        <p className="truncate text-xs text-text-muted">{user.email}</p>
                       </div>
                       <button
                         type="button"
                         role="menuitem"
                         tabIndex={userMenuOpen ? 0 : -1}
                         onClick={handleLogout}
-                        className="mt-1 flex w-full items-center gap-2 rounded-lg px-3 py-2 text-sm text-[#586860] transition-colors hover:bg-[#2D1C59]/5 hover:text-[#2D1C59]"
+                        className="mt-1 flex w-full items-center gap-2 rounded-lg px-3 py-2 text-sm text-text-muted transition-colors hover:bg-purple-royal/5 hover:text-purple-royal"
                       >
                         <LogOut className="h-4 w-4" /> Logout
                       </button>
@@ -937,14 +974,14 @@ export default function Header() {
                     <Link
                       href="/login"
                       onClick={closeMenu}
-                      className="whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-medium text-[#586860] transition-colors hover:text-[#2D1C59]"
+                      className="whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-medium text-text-muted transition-colors hover:text-purple-royal"
                     >
                       Login
                     </Link>
                     <Link
                       href="/signup"
                       onClick={closeMenu}
-                      className="whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-medium text-[#2D1C59] transition-colors hover:bg-[#2D1C59]/5"
+                      className="whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-medium text-purple-royal transition-colors hover:bg-purple-royal/5"
                     >
                       Sign up
                     </Link>
@@ -953,10 +990,10 @@ export default function Header() {
               </div>
             )}
 
-            {/* Book Session (sm and up) -> contact form tak scroll */}
+            {/* Free discovery call CTA (sm and up) -> contact form tak scroll */}
             <div className="hidden whitespace-nowrap sm:block">
               <Button variant="primary" size="sm" href={BOOK_SESSION_HREF} onClick={closeMenu}>
-                Book Session
+                {CTA_LABEL}
               </Button>
             </div>
 
@@ -964,7 +1001,7 @@ export default function Header() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen((v) => !v)}
-              className="rounded-full p-2 text-[#2D1C59] transition-colors hover:bg-[#2D1C59]/10 xl:hidden"
+              className="rounded-full p-2 text-purple-royal transition-colors hover:bg-purple-royal/10 xl:hidden"
               aria-label="Toggle navigation menu"
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-drawer"
@@ -995,7 +1032,7 @@ export default function Header() {
       <div
         onClick={closeMenu}
         aria-hidden="true"
-        className={`absolute inset-x-0 top-full -z-10 h-[100dvh] bg-[#1E255E]/20 transition-opacity duration-300 xl:hidden ${
+        className={`absolute inset-x-0 top-full -z-10 h-[100dvh] bg-purple-royal/20 transition-opacity duration-300 xl:hidden ${
           mobileMenuOpen ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       />
@@ -1004,25 +1041,25 @@ export default function Header() {
       <div
         id="mobile-drawer"
         aria-hidden={!mobileMenuOpen}
-        className={`absolute inset-x-0 top-full max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain border-b border-[#2D1C59]/15 bg-[#FAF7F2] px-4 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-3 shadow-xl transition-[opacity,transform,visibility] duration-200 ease-out sm:px-6 xl:hidden ${
+        className={`absolute inset-x-0 top-full max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain border-b border-purple-royal/15 bg-offwhite-card px-4 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-3 shadow-xl transition-[opacity,transform,translate,visibility] duration-200 ease-out motion-reduce:transition-none sm:px-6 xl:hidden ${
           mobileMenuOpen
             ? "visible translate-y-0 opacity-100"
             : "invisible pointer-events-none -translate-y-2 opacity-0"
         }`}
       >
         <nav aria-label="Mobile navigation" className="mx-auto flex max-w-xl flex-col gap-1.5">
-          {NAV_ITEMS.map((link) => {
+          {NAV_ITEMS.map((link, i) => {
             const isActive = isLinkActive(link, currentPath);
             const rowClass = `flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-base font-medium transition-colors ${
               isActive
-                ? "bg-[#2D1C59]/10 font-semibold text-[#2D1C59]"
-                : "text-[#4A5D54] hover:bg-[#2D1C59]/5 hover:text-[#2D1C59]"
+                ? "bg-purple-royal/10 font-semibold text-purple-royal"
+                : "text-text-muted hover:bg-purple-royal/5 hover:text-purple-royal"
             }`;
 
             // Founder accordion
             if (link.children) {
               return (
-                <div key={link.id}>
+                <div key={link.id} className={staggerClass} style={stagger(i)}>
                   <button
                     type="button"
                     aria-expanded={mobileSubOpen}
@@ -1043,17 +1080,18 @@ export default function Header() {
                     }`}
                   >
                     <div className="overflow-hidden">
-                      <div className="ml-4 mt-1 flex flex-col gap-1 border-l border-[#2D1C59]/15 pl-3">
+                      <div className="ml-4 mt-1 flex flex-col gap-1 border-l border-purple-royal/15 pl-3">
                         {link.children.map((child) => (
                           <Link
                             key={child.href}
                             href={child.href}
                             onClick={closeMenu}
                             tabIndex={mobileSubOpen ? 0 : -1}
-                            className={`rounded-lg px-3 py-2.5 text-[15px] transition-colors ${
+                            /* text-[17px] -> text-base: scale me already +2px (18px), parent row jitna */
+                            className={`rounded-lg px-3 py-2.5 text-base transition-colors ${
                               currentPath === child.href
-                                ? "bg-[#2D1C59]/10 font-semibold text-[#2D1C59]"
-                                : "text-[#4A5D54] hover:bg-[#2D1C59]/5 hover:text-[#2D1C59]"
+                                ? "bg-purple-royal/10 font-semibold text-purple-royal"
+                                : "text-text-muted hover:bg-purple-royal/5 hover:text-purple-royal"
                             }`}
                           >
                             {child.label}
@@ -1067,29 +1105,34 @@ export default function Header() {
             }
 
             return (
-              <Link key={link.id} href={link.href} onClick={closeMenu} className={rowClass}>
-                <span>{link.label}</span>
-                <ArrowRight className="h-4 w-4 opacity-40" />
-              </Link>
+              <div key={link.id} className={staggerClass} style={stagger(i)}>
+                <Link href={link.href} onClick={closeMenu} className={rowClass}>
+                  <span>{link.label}</span>
+                  <ArrowRight className="h-4 w-4 opacity-40" />
+                </Link>
+              </div>
             );
           })}
 
           {/* Auth (mobile) */}
           {hydrated && (
-            <div className="mt-2 border-t border-[#2D1C59]/10 pt-4">
+            <div
+              className={`mt-2 border-t border-purple-royal/10 pt-4 ${staggerClass}`}
+              style={stagger(NAV_ITEMS.length)}
+            >
               {user ? (
                 <div className="flex items-center justify-between gap-3 px-1">
                   <div className="flex min-w-0 items-center gap-3">
                     <Avatar user={user} size="h-10 w-10" />
                     <div className="min-w-0">
-                      <p className="truncate text-sm font-semibold text-[#2D1C59]">{user.name}</p>
-                      <p className="truncate text-xs text-[#586860]">{user.email}</p>
+                      <p className="truncate text-sm font-semibold text-purple-royal">{user.name}</p>
+                      <p className="truncate text-xs text-text-muted">{user.email}</p>
                     </div>
                   </div>
                   <button
                     type="button"
                     onClick={handleLogout}
-                    className="flex shrink-0 items-center gap-1.5 rounded-lg border border-[#2D1C59]/15 px-3 py-2 text-sm text-[#2D1C59] transition-colors hover:bg-[#2D1C59]/5"
+                    className="flex shrink-0 items-center gap-1.5 rounded-lg border border-purple-royal/15 px-3 py-2 text-sm text-purple-royal transition-colors hover:bg-purple-royal/5"
                   >
                     <LogOut className="h-4 w-4" /> Logout
                   </button>
@@ -1099,14 +1142,14 @@ export default function Header() {
                   <Link
                     href="/login"
                     onClick={closeMenu}
-                    className="rounded-xl border border-[#2D1C59]/20 py-3 text-center text-sm font-medium text-[#2D1C59] transition-colors hover:bg-[#2D1C59]/5"
+                    className="rounded-xl border border-purple-royal/20 py-3 text-center text-sm font-medium text-purple-royal transition-colors hover:bg-purple-royal/5"
                   >
                     Login
                   </Link>
                   <Link
                     href="/signup"
                     onClick={closeMenu}
-                    className="rounded-xl bg-[#2D1C59] py-3 text-center text-sm font-medium text-white transition-colors hover:bg-[#35146E]"
+                    className="rounded-xl bg-purple-royal py-3 text-center text-sm font-medium text-white transition-colors hover:bg-purple-dark"
                   >
                     Sign up
                   </Link>
@@ -1115,8 +1158,11 @@ export default function Header() {
             </div>
           )}
 
-          {/* Book Session (mobile) */}
-          <div className="mt-3">
+          {/* Free discovery call CTA (mobile) */}
+          <div
+            className={`mt-3 ${staggerClass}`}
+            style={stagger(NAV_ITEMS.length + 1)}
+          >
             <Button
               variant="primary"
               size="md"
@@ -1124,7 +1170,7 @@ export default function Header() {
               href={BOOK_SESSION_HREF}
               onClick={closeMenu}
             >
-              Book Session
+              {CTA_LABEL}
             </Button>
           </div>
         </nav>

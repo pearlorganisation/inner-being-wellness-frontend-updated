@@ -325,7 +325,7 @@ export default function FreedomPage() {
   return (
     <div className="w-full overflow-x-clip bg-[#FBF9F5]">
       {/* 1. HERO */}
-      <section className="relative border-b border-[#2D1C59]/10 bg-[#FAF7F2]">
+      <section className="relative border-none border-[#2D1C59]/10 bg-[#FAF7F2]">
         <Deco
           src={deco.heroLeft}
           className="left-0 top-3 z-0 w-12 sm:w-20 lg:w-24 xl:w-28"

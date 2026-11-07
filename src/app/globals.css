@@ -6,6 +6,7 @@
 }
 
 @theme {
+  /* ---------- Brand colors ---------- */
   --color-purple-royal: #2D1C59;
   --color-purple-dark: #231754;
   --color-purple-deep: #1E1244;
@@ -18,37 +19,113 @@
   --color-offwhite: #FBF9F5;
   --color-offwhite-card: #FAF7F2;
   --color-offwhite-darker: #F3EFE6;
+  --color-sand: #D8CFBF;
   --color-text-main: #2A3630;
   --color-text-muted: #56675E;
+
+  /* ---------- Typography scale (+2px client request) ----------
+     text-xs 12 -> 14 | text-sm 14 -> 16 | text-base 16 -> 18
+     text-lg 18 -> 20 | text-xl 20 -> 22 | text-2xl 24 -> 26
+     text-3xl 30 -> 32 | text-4xl 36 -> 38 | text-5xl 48 -> 50 | text-6xl 60 -> 62 */
+  --text-xs: 0.875rem;
+  --text-sm: 1rem;
+  --text-base: 1.125rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.625rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.375rem;
+  --text-5xl: 3.125rem;
+  --text-6xl: 3.875rem;
+
+  /* ---------- Motion ---------- */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-html {
-  scroll-behavior: smooth;
-  background-color: #FBF9F5;
-  color: #2A3630;
+/* ---------- Base ----------
+   Element rules @layer base mein rakho, warna Tailwind utilities override ho jaati hain. */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem; /* sticky header ke neeche anchor content na chhupe */
+    background-color: var(--color-offwhite);
+    color: var(--color-text-main);
+    min-height: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-offwhite);
+    overflow-x: hidden;
+    min-height: 100vh;
+    min-height: 100dvh;
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Images/video ke neeche inline-gap nahi aayega */
+  img,
+  video,
+  svg,
+  canvas {
+    display: block;
+    max-width: 100%;
+  }
+
+  img,
+  video {
+    height: auto;
+  }
+
+  main {
+    display: block;
+  }
+
+  main > section {
+    margin: 0;
+  }
 }
 
-body {
-  background-color: #FBF9F5;
-  overflow-x: hidden;
+/* ---------- Layout helpers ----------
+   FIX: @layer components ke andar, taaki pt-0 / max-w-6xl jaisi utilities inhe override kar saken.
+   Bina layer wali CSS Tailwind utilities se hamesha jeet jaati hai. */
+@layer components {
+  .section-y {
+    padding-block: clamp(2.5rem, 5vw, 4.5rem);
+  }
+
+  .section-y-sm {
+    padding-block: clamp(2rem, 4vw, 3.5rem);
+  }
+
+  .container-x {
+    width: 100%;
+    max-width: 80rem;
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 4vw, 2.5rem);
+  }
+
+  /* Fluid headings (+2px client request) */
+  .h-hero {
+    font-size: clamp(2.375rem, 5.5vw + 0.5rem, 4.375rem);
+    line-height: 1.1;
+  }
+
+  .h-section {
+    font-size: clamp(2rem, 3.5vw + 0.5rem, 3.125rem);
+    line-height: 1.15;
+  }
+
+  .font-display {
+    font-family: var(--font-cormorant), Georgia, serif;
+  }
 }
 
-.font-display {
-  font-family: var(--font-cormorant), Georgia, serif;
-}
-
-* {
-  box-sizing: border-box;
-}
-
+/* ---------- Keyframes ---------- */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes floatLeaf {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-8px) rotate(3deg); }
 }
 
 @keyframes softGlow {
@@ -56,19 +133,105 @@ body {
   50% { opacity: 1; }
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+@keyframes heroRise {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.animate-float-leaf {
-  animation: floatLeaf 6s ease-in-out infinite;
+@keyframes softFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s var(--ease-out-expo) forwards;
 }
 
 .animate-glow {
   animation: softGlow 4s ease-in-out infinite;
 }
 
+.animate-float {
+  animation: softFloat 6s ease-in-out infinite;
+}
+
+/* Hero load animation: delay inline style se, e.g. style={{ "--d": "150ms" }} */
+.hero-rise {
+  opacity: 0;
+  animation: heroRise 0.9s var(--ease-out-expo) forwards;
+  animation-delay: var(--d, 0ms);
+}
+
+/* ---------- Scroll reveal (Reveal.jsx ke saath) ---------- */
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition:
+    opacity 0.8s var(--ease-out-expo),
+    transform 0.8s var(--ease-out-expo);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal-left { transform: translate3d(-32px, 0, 0); }
+.reveal-right { transform: translate3d(32px, 0, 0); }
+.reveal-zoom { transform: scale(0.96); }
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+
+/* Card hover (optional): className="card-hover" */
+.card-hover {
+  transition: transform 0.35s var(--ease-out-expo), box-shadow 0.35s var(--ease-out-expo);
+}
+
+@media (hover: hover) {
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 34px -14px rgba(45, 28, 89, 0.25);
+  }
+}
+
+/* ---------- JS band ho to content invisible na rahe ---------- */
+@media (scripting: none) {
+  .reveal,
+  .hero-rise {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+/* ---------- Accessibility: reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .reveal,
+  .hero-rise {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .animate-fade-in,
+  .animate-glow,
+  .animate-float {
+    animation: none !important;
+  }
+
+  .card-hover,
+  .card-hover:hover {
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ---------- Scrollbar ---------- */
 ::-webkit-scrollbar { width: 7px; }
-::-webkit-scrollbar-track { background: #FBF9F5; }
-::-webkit-scrollbar-thumb { background: #D8CFBF; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #C5A265; }
+::-webkit-scrollbar-track { background: var(--color-offwhite); }
+::-webkit-scrollbar-thumb { background: var(--color-sand); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-gold-metallic); }

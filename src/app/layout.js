@@ -1,6 +1,16 @@
+
+
+
+// // new updated code 
+
+
+
+
+
 // import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 // import Header from "@/components/layout/Header";
 // import Footer from "@/components/layout/Footer";
+// import StoreProvider from "@/store/StoreProvider"; // 👈 NEW
 // import "./globals.css";
 
 // const cormorant = Cormorant_Garamond({
@@ -48,11 +58,14 @@
 //       className={`${cormorant.variable} ${jakarta.variable}`}
 //     >
 //       <body className="font-sans bg-[#FBF9F5] text-[#2A3630] antialiased selection:bg-[#2D1C59]/15 selection:text-[#2D1C59]">
-//         <div className="min-h-screen flex flex-col">
-//           <Header />
-//           <main className="flex-1 w-full">{children}</main>
-//           <Footer />
-//         </div>
+//         {/* 👇 NEW: Header, main, Footer sab ko wrap karo */}
+//         <StoreProvider>
+//           <div className="min-h-screen flex flex-col">
+//             <Header />
+//             <main className="flex-1 w-full">{children}</main>
+//             <Footer />
+//           </div>
+//         </StoreProvider>
 //       </body>
 //     </html>
 //   );
@@ -60,31 +73,30 @@
 
 
 
-// new updated code 
 
-
+// updated code as per client requirement
 
 
 
 import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import StoreProvider from "@/store/StoreProvider"; // 👈 NEW
+import StoreProvider from "@/store/StoreProvider";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  variable: "--font-cormorant",
+  // style: ["normal", "italic"],
+  // variable: "--font-cormorant",
   display: "swap",
 });
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  variable: "--font-jakarta",
+  // style: ["normal", "italic"],
+  // variable: "--font-jakarta",
   display: "swap",
 });
 
@@ -106,7 +118,9 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: "#35146E",
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#2D1C59",
 };
 
 export default function RootLayout({ children }) {
@@ -117,11 +131,10 @@ export default function RootLayout({ children }) {
       className={`${cormorant.variable} ${jakarta.variable}`}
     >
       <body className="font-sans bg-[#FBF9F5] text-[#2A3630] antialiased selection:bg-[#2D1C59]/15 selection:text-[#2D1C59]">
-        {/* 👇 NEW: Header, main, Footer sab ko wrap karo */}
         <StoreProvider>
-          <div className="min-h-screen flex flex-col">
+          <div className="flex min-h-dvh flex-col overflow-x-clip">
             <Header />
-            <main className="flex-1 w-full">{children}</main>
+            <main className="w-full min-w-0 flex-1">{children}</main>
             <Footer />
           </div>
         </StoreProvider>
