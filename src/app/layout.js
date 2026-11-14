@@ -83,6 +83,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import StoreProvider from "@/store/StoreProvider";
 import "./globals.css";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -136,6 +137,7 @@ export default function RootLayout({ children }) {
             <Header />
             <main className="w-full min-w-0 flex-1">{children}</main>
             <Footer />
+            <WhatsAppButton />
           </div>
         </StoreProvider>
       </body>

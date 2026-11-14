@@ -1,7 +1,16 @@
 "use client";
-import { ArrowRight, Heart, Sun, Flower2, Sparkles, Mic2, Award } from "lucide-react";
+import {
+  ArrowRight,
+  Heart,
+  Sun,
+  Flower2,
+  Sparkles,
+  Mic2,
+  Award,
+} from "lucide-react";
 import Button from "@/components/ui/Button";
 import HeroVideo from "@/components/home/HeroVideo";
+import { getWhatsAppLink } from "@/data/siteData";
 
 const FEATURE_ICONS = [Flower2, Heart, Sun];
 
@@ -115,10 +124,7 @@ export default function HeroSection({
                 </div>
 
                 {/* Credentials: video ke neeche, chehre par kuch nahi */}
-                <div
-                  className="hv-rise hv-badges"
-                  style={{ "--d": "600ms" }}
-                >
+                <div className="hv-rise hv-badges" style={{ "--d": "600ms" }}>
                   <span className="hv-badge">
                     <Mic2 className="h-4 w-4 text-[#C5A265]" />
                     TEDx Speaker
@@ -144,7 +150,16 @@ export default function HeroSection({
                     <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Button>
                   <p className="mt-2 text-xs text-[#7A8E83]">
-                    Free discovery call · No obligation
+                    Free discovery call · No obligationa
+                    <a
+                      href={getWhatsAppLink()}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[#128C7E] transition-colors hover:text-[#25D366]"
+                    >
+                      <span className="h-2 w-2 rounded-full bg-[#25D366]" />
+                      Or chat with us on WhatsApp
+                    </a>
                   </p>
                 </div>
               </>

@@ -1619,9 +1619,6 @@
 
 // // updated code as per client requirement
 
-
-
-
 // updated code as per client requirement
 
 export const COMMON_EMAIL = "hello@innerbeingwellness.com";
@@ -1643,7 +1640,10 @@ export const siteData = {
       email: COMMON_EMAIL,
       // CLIENT: Muazzam se number aate hi bharna (WhatsApp ke liye)
       phone: "",
-      whatsapp: "",
+      whatsapp: "971504500876",
+      whatsappDisplay: "+971 50 450 0876",
+      whatsappMessage:
+        "Hello Inner Being Wellness, I would like to know more about a free discovery call.",
       responseTime: "We aim to respond within two working days.",
       serviceMode:
         "Private frequency sessions and bioenergetic wellness guidance",
@@ -1772,7 +1772,7 @@ export const siteData = {
         src: "/assets/aistudio/Meditation_at_sunrise_80d22919.png",
         alt: "A woman meditating at sunrise on a mountain overlook beneath an old tree",
       },
-              // Janki intro video (hero, right side)
+      // Janki intro video (hero, right side)
       video: {
         enabled: true,
         src: "/assets/videos/janki.mp4",
@@ -1782,7 +1782,7 @@ export const siteData = {
         muted: true,
         allowFullscreen: true,
       },
-      
+
       highlights: [
         {
           id: "clear-mind",
@@ -1871,7 +1871,7 @@ export const siteData = {
         "A short introduction to the philosophy behind our work: fix the Being first, and the Doing will naturally follow.",
       caption: "Introduction · approx. 1 min",
       video: {
-        src: "/assets/videos/inner peace (1).mp4",
+        src: "/assets/videos/intro.mp4",
         poster: "/assets/videos/intro-poster.jpg",
         loop: true, // true = end screen ke baad auto replay
         muted: true,
@@ -3080,6 +3080,12 @@ export const siteData = {
         href: `mailto:${COMMON_EMAIL}`,
         description: "For session enquiries and general questions.",
       },
+
+      {
+        label: "WhatsApp",
+        value: "+971 50 450 0876",
+        href: "https://wa.me/971504500876",
+      },
       {
         id: "session-format",
         icon: "Flower2",
@@ -3343,6 +3349,10 @@ export const siteData = {
   },
 };
 
+export const getWhatsAppLink = (message) => {
+  const { whatsapp, whatsappMessage } = siteData.brand.contact;
+  return `https://wa.me/${whatsapp}?text=${encodeURIComponent(message || whatsappMessage)}`;
+};
 export default siteData;
 
 // export const COMMON_EMAIL = "hello@innerbeingwellness.com";
@@ -3497,7 +3507,7 @@ export default siteData;
 //       // ~1 min intro video
 //       // video: {
 //       //   enabled: true,
-//       //  src: "/assets/videos/inner peace (1).mp4",
+//       //  src: "/assets/videos/intro.mp4",
 //       //   poster: "/assets/videos/intro-portrait-poster.jpg",
 //       //   loop: true,
 //       //   muted: true,
@@ -3600,7 +3610,7 @@ export default siteData;
 //         "A short introduction to the philosophy behind our work: fix the Being first, and the Doing will naturally follow.",
 //       caption: "Introduction · approx. 1 min",
 //       video: {
-//         src: "/assets/videos/inner peace (1).mp4",
+//         src: "/assets/videos/intro.mp4",
 //         poster: "/assets/videos/intro-poster.jpg",
 //         loop: true, // true = end screen ke baad auto replay
 //         muted: true,
