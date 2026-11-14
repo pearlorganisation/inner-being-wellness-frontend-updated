@@ -4,16 +4,17 @@ import { Play, Pause, Volume2, VolumeX, Maximize2, Minimize2 } from "lucide-reac
 
 /**
  * HeroVideo
- * - Inline (in-page) playback + real fullscreen (iOS Safari bhi supported)
+ * - Inline playback + real fullscreen (iOS Safari bhi supported)
  * - Auto loop, autoplay (muted, browser policy ke hisaab se)
  * - Click video = play/pause, controls hover/tap pe aate hain
- * - Fully responsive (4/5 card, photo ke saath equal height)
- * - Props: video = { src, poster, loop, muted, allowFullscreen }
+ * - "Tap for sound" pill, pehli baar unmute par video shuru se chalta hai
+ * - Props: video = { src, poster, label, loop, muted, allowFullscreen }
  */
 export default function HeroVideo({ video }) {
   const wrapRef = useRef(null);
   const videoRef = useRef(null);
   const hideTimer = useRef(null);
+  const hasUnmuted = useRef(false);
 
   const [playing, setPlaying] = useState(false);
   const [muted, setMuted] = useState(video?.muted ?? true);
@@ -51,6 +52,11 @@ export default function HeroVideo({ video }) {
     e.stopPropagation();
     const v = videoRef.current;
     if (!v) return;
+    // Pehli baar sound on ho to video shuru se chale (visitor poora message sune)
+    if (v.muted && !hasUnmuted.current) {
+      v.currentTime = 0;
+      hasUnmuted.current = true;
+    }
     v.muted = !v.muted;
     setMuted(v.muted);
     revealControls();
@@ -98,7 +104,6 @@ export default function HeroVideo({ video }) {
     const v = videoRef.current;
     if (!v) return;
 
-    // React ka muted attribute kabhi kabhi autoplay ke liye late set hota hai
     v.muted = video?.muted ?? true;
     v.defaultMuted = true;
 
@@ -116,7 +121,6 @@ export default function HeroVideo({ video }) {
     v.addEventListener("loadeddata", onLoaded);
     v.addEventListener("error", onError);
 
-    // Autoplay try (muted hone pe browsers allow karte hain)
     const p = v.play();
     if (p && typeof p.catch === "function") p.catch(() => setPlaying(false));
 
@@ -141,7 +145,7 @@ export default function HeroVideo({ video }) {
     };
   }, []);
 
-  // Tab hidden ho to pause, wapas aaye to resume (battery + performance)
+  // Tab hidden ho to pause, wapas aaye to resume
   useEffect(() => {
     const onVis = () => {
       const v = videoRef.current;
@@ -181,14 +185,16 @@ export default function HeroVideo({ video }) {
       onMouseMove={revealControls}
       onMouseLeave={() => playing && setShowControls(false)}
       onTouchStart={revealControls}
-      className={`group relative overflow-hidden border border-[#2D1C59]/10 bg-black shadow-2xl ${
-        isFs ? "rounded-none" : "aspect-[4/5] rounded-3xl"
+      className={`group relative overflow-hidden bg-[#231754] ${
+        isFs
+          ? "rounded-none"
+          : "aspect-[6/7] rounded-3xl shadow-[0_30px_60px_-20px_rgba(45,28,89,0.45)] ring-4 ring-white"
       }`}
     >
       <video
         ref={videoRef}
         src={video.src}
-        poster={video.poster}
+        poster={video.poster || undefined}
         loop={loop}
         muted={muted}
         autoPlay
@@ -204,7 +210,27 @@ export default function HeroVideo({ video }) {
         aria-label="Inner Being Wellness introduction video"
       />
 
-      {/* Loading shimmer (poster ke upar) */}
+      {/* Label */}
+      {video.label && (
+        <span className="pointer-events-none absolute left-8 top-6 z-12 rounded-full bg-white/90 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#2D1C59] shadow-md backdrop-blur-md">
+          {video.label}
+        </span>
+      )}
+
+      {/* Tap for sound pill */}
+      {muted && playing && !error && (
+        <button
+          type="button"
+          onClick={toggleMute}
+          aria-label="Turn on sound"
+          className="hv-pulse absolute bottom-16 right-4 z-10 flex items-center gap-1.5 rounded-full bg-[#E8A948] px-3 py-1.5 text-xs font-bold text-[#2D1C59] shadow-md transition hover:brightness-105"
+        >
+          <Volume2 className="h-3.5 w-3.5" />
+          Tap for sound
+        </button>
+      )}
+
+      {/* Loading shimmer */}
       {!ready && !error && (
         <div className="pointer-events-none absolute inset-0 animate-pulse bg-gradient-to-br from-[#2D1C59]/30 to-[#0E6E6B]/20" />
       )}
@@ -213,7 +239,7 @@ export default function HeroVideo({ video }) {
       {error && (
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-[#231754] p-6 text-center text-white">
           <Play className="h-8 w-8 opacity-70" />
-          <p className="text-sm">Video abhi load nahi ho payi. Please page refresh karein.</p>
+          <p className="text-sm">Video could not be loaded. Please refresh the page.</p>
         </div>
       )}
 
@@ -238,7 +264,6 @@ export default function HeroVideo({ video }) {
             showControls || !playing ? "opacity-100" : "pointer-events-none opacity-0"
           }`}
         >
-          {/* Progress bar */}
           <div
             role="slider"
             aria-label="Video progress"

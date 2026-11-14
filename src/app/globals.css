@@ -235,3 +235,120 @@
 ::-webkit-scrollbar-track { background: var(--color-offwhite); }
 ::-webkit-scrollbar-thumb { background: var(--color-sand); border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--color-gold-metallic); }
+
+
+/* ============ HERO ANIMATIONS ============ */
+@keyframes hv-rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: none; }
+}
+.hv-rise {
+  opacity: 0;
+  animation: hv-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--d, 0ms);
+}
+
+@keyframes hv-pop {
+  from { opacity: 0; transform: scale(0.94) translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+.hv-pop {
+  opacity: 0;
+  animation: hv-pop 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--d, 0ms);
+}
+
+@keyframes hv-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+.hv-float { animation: hv-float 6s ease-in-out infinite; }
+
+@keyframes hv-blob {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(30px, -24px) scale(1.1); }
+}
+.hv-blob { animation: hv-blob 14s ease-in-out infinite; }
+
+@keyframes hv-shimmer { to { background-position: 200% center; } }
+.hv-grad-text {
+  background: linear-gradient(90deg, #0e6e6b, #1aa39d, #0e6e6b);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: hv-shimmer 6s linear infinite;
+}
+
+@keyframes hv-draw { to { transform: scaleX(1); } }
+.hv-underline {
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: hv-draw 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--d, 800ms);
+}
+
+@keyframes hv-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(232, 169, 72, 0.55); }
+  70%  { box-shadow: 0 0 0 12px rgba(232, 169, 72, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(232, 169, 72, 0); }
+}
+.hv-pulse { animation: hv-pulse 2s infinite; }
+
+@keyframes hv-sweep {
+  0%   { transform: translateX(-120%) skewX(-20deg); }
+  60%, 100% { transform: translateX(260%) skewX(-20deg); }
+}
+.hv-shine { position: relative; overflow: hidden; border-radius: 9999px; }
+.hv-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  animation: hv-sweep 4.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Video frame: mobile full width, desktop par viewport ke hisaab se (CTA fold ke andar rahe) */
+.hv-frame {
+  width: 100%;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 70px rgba(197, 162, 101, 0.3);
+}
+@media (min-width: 1024px) {
+  .hv-frame {
+    width: clamp(390px, calc((110svh - 250px) * 0.8), 580px);
+    margin-inline: auto;
+  }
+}
+
+
+/* Credentials pills (video ke neeche) */
+.hv-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.hv-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid #e9dcbf;
+  background: #fff;
+  padding: 0.3rem 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #2d1c59;
+  box-shadow: 0 1px 2px rgba(45, 28, 89, 0.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hv-rise, .hv-pop { animation: none; opacity: 1; }
+  .hv-underline { animation: none; transform: none; }
+  .hv-float, .hv-blob, .hv-grad-text, .hv-pulse, .hv-shine::after { animation: none; }
+}

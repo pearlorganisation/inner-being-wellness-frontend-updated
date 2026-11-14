@@ -1772,25 +1772,17 @@ export const siteData = {
         src: "/assets/aistudio/Meditation_at_sunrise_80d22919.png",
         alt: "A woman meditating at sunrise on a mountain overlook beneath an old tree",
       },
-
-      // ~1 min intro video
-      // video: {
-      //   enabled: true,
-      //  src: "/assets/videos/intro.mp4",
-      //   poster: "/assets/videos/intro-portrait-poster.jpg",
-      //   loop: true,
-      //   muted: true,
-      //   allowFullscreen: true,
-      //   afterVideoCtas: [
-      //     { label: "Learn more", href: "/about", variant: "secondary" },
-      //     {
-      //       label: CTA_LABEL,
-      //       href: "/contact#contact-form",
-      //       variant: "primary",
-      //     },
-      //   ],
-      // },
-
+              // Janki intro video (hero, right side)
+      video: {
+        enabled: true,
+        src: "/assets/videos/janki.mp4",
+        poster: "",
+        // label: "Meet Janki Ravani",
+        loop: true,
+        muted: true,
+        allowFullscreen: true,
+      },
+      
       highlights: [
         {
           id: "clear-mind",
@@ -1879,7 +1871,7 @@ export const siteData = {
         "A short introduction to the philosophy behind our work: fix the Being first, and the Doing will naturally follow.",
       caption: "Introduction · approx. 1 min",
       video: {
-        src: "/assets/videos/intro.mp4",
+        src: "/assets/videos/inner peace (1).mp4",
         poster: "/assets/videos/intro-poster.jpg",
         loop: true, // true = end screen ke baad auto replay
         muted: true,
@@ -3505,7 +3497,7 @@ export default siteData;
 //       // ~1 min intro video
 //       // video: {
 //       //   enabled: true,
-//       //  src: "/assets/videos/intro.mp4",
+//       //  src: "/assets/videos/inner peace (1).mp4",
 //       //   poster: "/assets/videos/intro-portrait-poster.jpg",
 //       //   loop: true,
 //       //   muted: true,
@@ -3608,7 +3600,7 @@ export default siteData;
 //         "A short introduction to the philosophy behind our work: fix the Being first, and the Doing will naturally follow.",
 //       caption: "Introduction · approx. 1 min",
 //       video: {
-//         src: "/assets/videos/intro.mp4",
+//         src: "/assets/videos/inner peace (1).mp4",
 //         poster: "/assets/videos/intro-poster.jpg",
 //         loop: true, // true = end screen ke baad auto replay
 //         muted: true,
