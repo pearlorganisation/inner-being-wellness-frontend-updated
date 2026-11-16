@@ -620,6 +620,7 @@ const NAV_ITEMS = [
   },
   { label: "Product", href: "/freedom-from-resistance", id: "product", placement: "main" },
   { label: "Frequencies", href: "/offerings", id: "frequencies", placement: "main" },
+  { label: "Healy", href: "/film", id: "film", placement: "main" },
   { label: "Manifesto", href: "/manifesto", id: "manifesto", placement: "more" },
   { label: "Defaults", href: "/#four-defaults", id: "defaults", placement: "more" },
   { label: "Reflections", href: "/reflections", id: "reflections", placement: "more" },

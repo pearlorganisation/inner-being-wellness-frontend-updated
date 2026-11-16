@@ -1114,7 +1114,9 @@ import {
   Flower2,
   MapPin,
   Phone,
+  MessageCircle,
 } from "lucide-react";
+
 
 /* ------------------------------------------------------------------ */
 /* Fallbacks: siteData.contactPage mein field na ho to ye use honge.  */
@@ -1143,14 +1145,7 @@ const DEFAULT_SESSION_FORMATS = [
 
 const DEFAULT_CONSENT =
   "I consent to Inner Being Wellness using these details to respond to my enquiry with discretion and care.";
-
-const ICONS = {
-  mail: Mail,
-  lotus: Flower2,
-  clock: Clock,
-  location: MapPin,
-  phone: Phone,
-};
+const ICONS = { Mail, Clock, Flower2, MapPin, Phone, MessageCircle };
 
 /* ------------------------------------------------------------------ */
 /* ⚙️ BACKEND MAPPING — 422 aaye to sirf yahan badlo                  */
@@ -1389,7 +1384,8 @@ export default function ContactPage({ initialInterest = "" }) {
               {contactOptions.map((opt, idx) => {
                 const Icon = ICONS[opt.icon] || Mail;
                 return (
-                  <Reveal key={opt.id} delay={idx * 100}>
+                  // <Reveal key={opt.id} delay={idx * 100}>
+                  <Reveal key={opt.id ?? opt.title ?? opt.label ?? idx} delay={idx * 100}>
                     <div className="group flex h-full items-start gap-4 rounded-[1.5rem] bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md sm:p-7">
                       <div className="mt-0.5 shrink-0 rounded-2xl bg-[#FAF4E6] p-3.5 text-[#B88B4A] transition-colors group-hover:bg-[#B88B4A] group-hover:text-white">
                         <Icon className="h-5 w-5" />
