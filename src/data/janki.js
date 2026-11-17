@@ -5,7 +5,7 @@ const IMG = "/assets/aistudio";
 
 export const jankiData = {
   name: "Janki Ravani",
-  role: "Personal Coach to Founders & Leaders",
+  role: "Co Founder & Chief Happiness Coach",
 
   // No separate email for Janki: all enquiries go to the common Inner Being address / booking.
   email: COMMON_EMAIL,
@@ -133,7 +133,7 @@ export const jankiData = {
   alsoAt: {
     heading: "Also at Inner Being Wellness",
     name: "Muazzam Abdul Rehman",
-    role: "Managing Director, Jusoor Facility Management",
+    role: "Managing Director, Founder & Frequency Wellness Coach Facility Management",
     text: "Inner Being Wellness brings two practitioners under one brand, each with their own way of working.",
     cta: { label: "About Muazzam Abdul Rehman", href: "/about" },
   },

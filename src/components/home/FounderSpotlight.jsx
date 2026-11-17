@@ -17,17 +17,17 @@ const CTA_LABEL = "Book Free Discovery Call";
 
 const founder = {
   name: "Muazzam Abdul Rehman",
-  title: "Managing Director, Jusoor Facility Management",
+  title: "Managing Director, Founder & Frequency Wellness Coach Facility Management",
   image: "/assets/aistudio/image2_aedbb8dd.jpeg",
   badge: "Founder Story",
   heading: "From Executive Leadership to Inner Transformation",
   intro:
-    "For decades, Muazzam Abdul Rehman built his career around structure, strategy, and high-level management. Academically trained with an MBA and specialized in organizational leadership, he serves as the Managing Director of Jusoor Facility Management across Abu Dhabi and Dubai, mastering the art of driving operational excellence and leading complex organizations.",
+    "For decades, Muazzam Abdul Rehman built his career around structure, strategy, and high-level management. Academically trained with an MBA and specialized in organizational leadership, he serves as the Managing Director of Founder & Frequency Wellness Coach Facility Management across Abu Dhabi and Dubai, mastering the art of driving operational excellence and leading complex organizations.",
   quote:
     "Yet, despite his corporate achievements, Muazzam realized that external success is only half the equation—true performance, vitality, and fulfillment begin from within.",
   credentials: [
     { icon: GraduationCap, label: "MBA, specialized in organizational leadership" },
-    { icon: Briefcase, label: "Managing Director, Jusoor Facility Management (Abu Dhabi & Dubai)" },
+    { icon: Briefcase, label: "Managing Director, Founder & Frequency Wellness Coach Facility Management (Abu Dhabi & Dubai)" },
     { icon: Brain, label: "Certified Master NLP Practitioner" },
     { icon: HeartHandshake, label: "EFT & Ho’oponopono Specialist" },
     { icon: Waves, label: "Bioenergetic Frequency Expert in Subconscious Reprogramming" },

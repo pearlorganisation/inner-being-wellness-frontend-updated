@@ -600,7 +600,7 @@ import Button from "@/components/ui/Button";
 /* -------------------------------------------------------------------------- */
 // SVG / transparent logo milte hi sirf yeh path badalna hai (e.g. "/assets/logo.svg")
 // SVG lagne ke baad logo <img> se "mix-blend-multiply" class bhi hata dena.
-const LOGO_SRC = "/assets/aistudio/sinner_being_logo.png";
+const LOGO_SRC = "/assets/aistudio/sinner_being_logo2.png";
 const BOOK_SESSION_HREF = "/contact#contact-form";
 const CTA_LABEL = "Book Free Discovery Call";
 
@@ -618,7 +618,7 @@ const NAV_ITEMS = [
       { label: "About Janki Ravani", href: "/janki" },
     ],
   },
-  { label: "Product", href: "/freedom-from-resistance", id: "product", placement: "main" },
+  { label: "services", href: "/freedom-from-resistance", id: "services", placement: "main" },
   { label: "Frequencies", href: "/offerings", id: "frequencies", placement: "main" },
   { label: "Healy", href: "/film", id: "film", placement: "main" },
   { label: "Manifesto", href: "/manifesto", id: "manifesto", placement: "more" },
@@ -867,7 +867,8 @@ export default function Header() {
             <img
               src={LOGO_SRC}
               alt="Inner Being Wellness logo"
-              className="h-10 w-10 shrink-0 bg-transparent object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105 sm:h-12 sm:w-12 xl:h-16 xl:w-16"
+              className="h-16 w-16 shrink-0 bg-transparent object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105 sm:h-16 sm:w-16 xl:h-20 xl:w-20"
+              // className="h-10 w-10 shrink-0 bg-transparent object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105 sm:h-12 sm:w-12 xl:h-16 xl:w-16"
               referrerPolicy="no-referrer"
             />
             <div className="flex flex-col whitespace-nowrap">

@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 // 👇 Logo ka path sirf yahan badalna hai (public/ folder ke andar ka path)
-export const ADMIN_LOGO_SRC = "/assets/aistudio/sinner_being_logo.png";
+export const ADMIN_LOGO_SRC = "/assets/aistudio/sinner_being_logo2.png";
 
 /**
  * size: number (px) ya koi bhi CSS value, jaise "clamp(40px, 5vw, 64px)"
