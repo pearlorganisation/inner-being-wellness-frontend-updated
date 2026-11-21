@@ -2071,20 +2071,36 @@ export const siteData = {
 
       releaseNote: "Releasing worldwide in just a couple of days",
 
-      videos: [
+      // videos: [
+      //   {
+      //     src: "/assets/videos/Inner being vid 1.mp4",
+      //     title: "Healy in the film, clip 1",
+      //   },
+      //   {
+      //     src: "/assets/videos/Inner being vid 2.mp4",
+      //     title: "Healy in the film, clip 2",
+      //   },
+      //   {
+      //     src: "/assets/videos/Inner being vid 3 (1).mp4",
+      //     title: "Healy in the film, clip 3",
+      //   },
+      // ],
+
+  videos: [
         {
-          src: "/assets/videos/Inner being vid 1.mp4",
+          src: "/assets/videos/video1.mp4",
           title: "Healy in the film, clip 1",
         },
         {
-          src: "/assets/videos/Inner being vid 2.mp4",
+          src: "/assets/videos/video2.mp4",
           title: "Healy in the film, clip 2",
         },
         {
-          src: "/assets/videos/Inner being vid 3 (1).mp4",
+          src: "/assets/videos/video3.mp4",
           title: "Healy in the film, clip 3",
         },
       ],
+
 
       question:
         "You've been curious about Healy for a while… what's stopping you from exploring it for yourself?",
