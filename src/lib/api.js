@@ -1,5 +1,17 @@
 import axios from "axios";
 
+const USER_TOKEN_KEY = "token";
+const ADMIN_AUTH_KEY = "ibw_admin_auth"; // adminAuthSlice ki STORAGE_KEY
+
+const getAdminToken = () => {
+  try {
+    const saved = JSON.parse(localStorage.getItem(ADMIN_AUTH_KEY) || "null");
+    return saved?.token || null;
+  } catch {
+    return null;
+  }
+};
+
 const api = axios.create({
   baseURL:
     process.env.NEXT_PUBLIC_API_URL ||
@@ -7,10 +19,13 @@ const api = axios.create({
   timeout: 60000, // Render free tier cold start ke liye 60s
 });
 
-// Har request me token automatically (user side)
+// /admin/* calls -> admin token, baaki -> user token
 api.interceptors.request.use((config) => {
   if (typeof window !== "undefined") {
-    const token = localStorage.getItem("token");
+    const isAdminCall = (config.url || "").startsWith("/admin");
+    const token = isAdminCall
+      ? getAdminToken()
+      : localStorage.getItem(USER_TOKEN_KEY);
     if (token) config.headers.Authorization = `Bearer ${token}`;
   }
   return config;

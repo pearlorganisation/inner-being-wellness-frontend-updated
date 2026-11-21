@@ -2073,15 +2073,15 @@ export const siteData = {
 
       videos: [
         {
-          src: "/assets/videos/video1.mp4",
+          src: "/assets/videos/Inner being vid 1.mp4",
           title: "Healy in the film, clip 1",
         },
         {
-          src: "/assets/videos/video2.mp4",
+          src: "/assets/videos/Inner being vid 2.mp4",
           title: "Healy in the film, clip 2",
         },
         {
-          src: "/assets/videos/video3.mp4",
+          src: "/assets/videos/Inner being vid 3 (1).mp4",
           title: "Healy in the film, clip 3",
         },
       ],

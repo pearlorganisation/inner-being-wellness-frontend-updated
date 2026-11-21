@@ -1,7 +1,10 @@
 "use client";
+import { usePathname } from "next/navigation";
 import { getWhatsAppLink } from "@/data/siteData";
 
 export default function WhatsAppButton() {
+    const pathname = usePathname()
+    if (pathname?.startsWith("/admin")) return null;
   return (
     <a
       href={getWhatsAppLink()}

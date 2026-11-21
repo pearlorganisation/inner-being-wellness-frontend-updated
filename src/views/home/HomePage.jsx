@@ -1,12 +1,3 @@
-
-
-
-
-
-
-
-
-
 // "use client";
 // import { useRouter } from "next/navigation";
 // import { siteData } from "@/data/siteData";
@@ -490,14 +481,7 @@
 //   );
 // }
 
-
-
-
-
-
-// updated 
-
-
+// updated
 
 "use client";
 import { useRouter } from "next/navigation";
@@ -512,6 +496,8 @@ import FrequenciesThoughtsSections from "@/components/home/FrequenciesThoughtsSe
 import JankiSpotlight from "@/components/JankiSpotlight";
 import ManifestoSection from "@/components/home/ManifestoSection";
 import { ArrowRight, Volume2 } from "lucide-react";
+import TestimonialsSection from "@/components/feedback/TestimonialsSection";
+import ServicesSection from "@/components/offerings/ServicesSection";
 
 /* ------------------------------------------------------------------
    PAGE SETTINGS
@@ -555,13 +541,48 @@ const content = {
     subtitle:
       "When your internal battery is low, external achievements cannot truly power you up. Most modern dis-eases stem from stresses stored over time. We bring you back to your original state:",
     cards: [
-      { id: "love", title: "Love", subtitle: "Default Setting 01", description: "Unconditional source resonance" },
-      { id: "peace", title: "Peace", subtitle: "Default Setting 02", description: "Unshakable inner calm" },
-      { id: "joy", title: "Joy", subtitle: "Default Setting 03", description: "Spontaneous lightness of being" },
-      { id: "contentment", title: "Contentment", subtitle: "Default Setting 04", description: "Deep fulfillment in the now" },
-      { id: "truth", title: "Truth", subtitle: "Default Setting 05", description: "Authentic self-expression" },
-      { id: "purity", title: "Purity", subtitle: "Default Setting 06", description: "Clear energetic container" },
-      { id: "honesty", title: "Honesty", subtitle: "Default Setting 07", description: "Radical internal integrity" },
+      {
+        id: "love",
+        title: "Love",
+        subtitle: "Default Setting 01",
+        description: "Unconditional source resonance",
+      },
+      {
+        id: "peace",
+        title: "Peace",
+        subtitle: "Default Setting 02",
+        description: "Unshakable inner calm",
+      },
+      {
+        id: "joy",
+        title: "Joy",
+        subtitle: "Default Setting 03",
+        description: "Spontaneous lightness of being",
+      },
+      {
+        id: "contentment",
+        title: "Contentment",
+        subtitle: "Default Setting 04",
+        description: "Deep fulfillment in the now",
+      },
+      {
+        id: "truth",
+        title: "Truth",
+        subtitle: "Default Setting 05",
+        description: "Authentic self-expression",
+      },
+      {
+        id: "purity",
+        title: "Purity",
+        subtitle: "Default Setting 06",
+        description: "Clear energetic container",
+      },
+      {
+        id: "honesty",
+        title: "Honesty",
+        subtitle: "Default Setting 07",
+        description: "Radical internal integrity",
+      },
     ],
   },
 
@@ -579,12 +600,42 @@ const content = {
     eyebrow: "Real-Time Biofield Feedback",
     title: "From Illness to Wellness, Objectively Recorded",
     steps: [
-      { number: "01", title: "Biofield Measurement", description: "Pre- and post-session biofield measurement & resonance mapping." },
-      { number: "02", title: "HRV Tracking", description: "Heart rate variability (HRV) & parasympathetic coherence tracking." },
-      { number: "03", title: "Integration Guidance", description: "Personalized integration guidance rooted in ancient wisdom and modern science." },
-      { number: "04", title: "Custom Frequency Protocol", description: "Targeted bioresonance frequencies applied to clear blockages and restore energetic balance." },
-      { number: "05", title: "Nervous System Reset", description: "Somatic practices and guided breathwork to shift your body from survival mode into deep restoration." },
-      { number: "06", title: "Long-Term Vitality Plan", description: "Actionable lifestyle recommendations and ongoing support to sustain your original default state." },
+      {
+        number: "01",
+        title: "Biofield Measurement",
+        description:
+          "Pre- and post-session biofield measurement & resonance mapping.",
+      },
+      {
+        number: "02",
+        title: "HRV Tracking",
+        description:
+          "Heart rate variability (HRV) & parasympathetic coherence tracking.",
+      },
+      {
+        number: "03",
+        title: "Integration Guidance",
+        description:
+          "Personalized integration guidance rooted in ancient wisdom and modern science.",
+      },
+      {
+        number: "04",
+        title: "Custom Frequency Protocol",
+        description:
+          "Targeted bioresonance frequencies applied to clear blockages and restore energetic balance.",
+      },
+      {
+        number: "05",
+        title: "Nervous System Reset",
+        description:
+          "Somatic practices and guided breathwork to shift your body from survival mode into deep restoration.",
+      },
+      {
+        number: "06",
+        title: "Long-Term Vitality Plan",
+        description:
+          "Actionable lifestyle recommendations and ongoing support to sustain your original default state.",
+      },
     ],
   },
 
@@ -595,10 +646,31 @@ const content = {
       "True realization arises from asking the right inner questions. Reflect deeply and save your answers below.",
     readLabel: "Reflect now",
     articles: [
-      { id: "inquiry-1", tag: "Career & Alignment", readTime: "Inquiry 01", title: "At work, do you act from peace or pressure?" },
-      { id: "inquiry-2", tag: "Relationships & Source", readTime: "Inquiry 02", title: "In relationships, do you give love or ask for love?" },
-      { id: "inquiry-3", tag: "Abundance & Wealth", readTime: "Inquiry 03", title: "With money, do you feel like a trustee, or operate from fear and ownership?" },
-      { id: "inquiry-4", tag: "Identity & Future", readTime: "Inquiry 04", title: "Who do you want to BE this year?" },
+      {
+        id: "inquiry-1",
+        tag: "Career & Alignment",
+        readTime: "Inquiry 01",
+        title: "At work, do you act from peace or pressure?",
+      },
+      {
+        id: "inquiry-2",
+        tag: "Relationships & Source",
+        readTime: "Inquiry 02",
+        title: "In relationships, do you give love or ask for love?",
+      },
+      {
+        id: "inquiry-3",
+        tag: "Abundance & Wealth",
+        readTime: "Inquiry 03",
+        title:
+          "With money, do you feel like a trustee, or operate from fear and ownership?",
+      },
+      {
+        id: "inquiry-4",
+        tag: "Identity & Future",
+        readTime: "Inquiry 04",
+        title: "Who do you want to BE this year?",
+      },
     ],
   },
 
@@ -625,9 +697,16 @@ export default function HomePage() {
   const thoughtsImages = homePage.thoughtsPreview.featuredArticles;
 
   const homeVisibleDefaults = homePage.fourDefaults.homeVisibleCount ?? 4;
-  const visibleDefaults = content.fourDefaults.cards.slice(0, homeVisibleDefaults);
-  const hasMoreDefaults = content.fourDefaults.cards.length > visibleDefaults.length;
-  const visibleThoughts = content.thoughtsPreview.articles.slice(0, HOME_THOUGHTS_COUNT);
+  const visibleDefaults = content.fourDefaults.cards.slice(
+    0,
+    homeVisibleDefaults,
+  );
+  const hasMoreDefaults =
+    content.fourDefaults.cards.length > visibleDefaults.length;
+  const visibleThoughts = content.thoughtsPreview.articles.slice(
+    0,
+    HOME_THOUGHTS_COUNT,
+  );
 
   // Hero media (siteData.homePage.hero se). Sab optional-safe hain.
   const heroVideo = homePage.hero?.video;
@@ -663,7 +742,10 @@ export default function HomePage() {
       <section className="section-y bg-[#FBF9F5]">
         <div className="container-x">
           <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-12 lg:gap-12">
-            <Reveal direction="left" className="order-2 min-w-0 lg:order-1 lg:col-span-5">
+            <Reveal
+              direction="left"
+              className="order-2 min-w-0 lg:order-1 lg:col-span-5"
+            >
               <div className="relative overflow-hidden rounded-3xl border border-[#2D1C59]/10 bg-white shadow-xl">
                 <img
                   src={homePage.introduction.image.src}
@@ -723,7 +805,9 @@ export default function HomePage() {
             <h2 className="font-serif text-[26px] leading-tight text-[#2D1C59] sm:text-4xl">
               {content.fourDefaults.title}
             </h2>
-            <p className="text-base text-[#4A5D54]">{content.fourDefaults.subtitle}</p>
+            <p className="text-base text-[#4A5D54]">
+              {content.fourDefaults.subtitle}
+            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
@@ -777,11 +861,14 @@ export default function HomePage() {
                 variant="outline"
                 size="md"
                 onClick={() =>
-                  handleNav(homePage.fourDefaults.fullViewCta?.href ?? "/offerings")
+                  handleNav(
+                    homePage.fourDefaults.fullViewCta?.href ?? "/offerings",
+                  )
                 }
                 className="w-full justify-center sm:w-auto"
               >
-                {homePage.fourDefaults.fullViewCta?.label ?? "View all default settings"}
+                {homePage.fourDefaults.fullViewCta?.label ??
+                  "View all default settings"}
                 <ArrowRight className="ml-1 h-4 w-4" />
               </Button>
             </Reveal>
@@ -805,7 +892,9 @@ export default function HomePage() {
                   />
                   <div className="absolute inset-x-3 bottom-3 flex items-center gap-2 rounded-xl border border-white/10 bg-black/60 p-3 text-xs text-white backdrop-blur-md sm:inset-x-4 sm:bottom-4">
                     <Volume2 className="h-4 w-4 shrink-0 text-[#E8A948]" />
-                    <span className="min-w-0">{content.healingFrequencies.overlay}</span>
+                    <span className="min-w-0">
+                      {content.healingFrequencies.overlay}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -828,7 +917,9 @@ export default function HomePage() {
                   <Button
                     variant="primary"
                     size="md"
-                    onClick={() => handleNav(homePage.healingFrequencies.cta.href)}
+                    onClick={() =>
+                      handleNav(homePage.healingFrequencies.cta.href)
+                    }
                     className="w-full justify-center sm:w-auto"
                   >
                     {content.healingFrequencies.ctaLabel}
@@ -843,6 +934,8 @@ export default function HomePage() {
 
       {/* 6b. HEALY / FILM */}
       <FilmSection />
+
+      <ServicesSection limit={6} viewAllHref="/freedom-from-resistance" />
 
       {/* 7. JOURNEY STEPS */}
       <section className="section-y bg-[#FBF9F5]">
@@ -866,7 +959,9 @@ export default function HomePage() {
                   <h3 className="mb-2 font-serif text-lg text-[#2D1C59] sm:mb-3 sm:text-xl">
                     {step.title}
                   </h3>
-                  <p className="text-sm leading-relaxed text-[#4E6258]">{step.description}</p>
+                  <p className="text-sm leading-relaxed text-[#4E6258]">
+                    {step.description}
+                  </p>
                 </div>
               </Reveal>
             ))}
@@ -926,7 +1021,9 @@ export default function HomePage() {
 
                     <div className="flex flex-1 flex-col justify-between space-y-4 p-5 sm:p-6">
                       <div className="space-y-2">
-                        <span className="text-xs text-[#8A9C92]">{article.readTime}</span>
+                        <span className="text-xs text-[#8A9C92]">
+                          {article.readTime}
+                        </span>
                         <h3 className="font-serif text-lg font-bold leading-snug text-[#2D1C59] transition-colors group-hover:text-[#0E6E6B]">
                           {article.title}
                         </h3>
@@ -943,9 +1040,19 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      {/* 8b. CLIENT TESTIMONIALS */}
+      <TestimonialsSection
+        eyebrow="Client Stories"
+        title="Words From Our Community"
+        limit={12}
+        ctaHref="/share-feedback"
+      />
 
       {/* 9. FINAL CTA */}
-      <section id="begin" className="section-y relative overflow-hidden bg-[#FBF9F5]">
+      <section
+        id="begin"
+        className="section-y relative overflow-hidden bg-[#FBF9F5]"
+      >
         <Reveal className="container-x relative z-10 max-w-5xl space-y-5 text-center sm:space-y-6">
           <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#B88B4A]">
             <span className="h-px w-6 bg-[#B88B4A]" />

@@ -167,6 +167,18 @@ const linkClass =
 const headingClass =
   "mb-4 font-serif text-sm font-semibold uppercase tracking-widest text-[#E8A948]";
 
+const FEEDBACK_LINK = { label: "Feedback", href: "/share-feedback" };
+
+function withFeedback(links) {
+  if (links.some((l) => l.href === FEEDBACK_LINK.href)) return links;
+  let at = -1;
+  links.forEach((l, i) => {
+    if (/^about/i.test(l.label)) at = i;
+  });
+  const i = at === -1 ? links.length : at + 1;
+  return [...links.slice(0, i), FEEDBACK_LINK, ...links.slice(i)];
+}
+
 export default function Footer() {
   const { footer, brand } = siteData;
 
@@ -258,7 +270,7 @@ export default function Footer() {
           <Reveal delay={100} className="min-w-0 lg:col-span-2">
             <h4 className={headingClass}>Quick Links</h4>
             <ul className="space-y-1.5 text-sm text-[#B3BDCC]">
-              {footer.columns[0].links.map((link, idx) => (
+              {withFeedback(footer.columns[0].links).map((link, idx) => (
                 <li key={idx}>
                   <Link href={link.href} className={linkClass}>
                     {link.label}

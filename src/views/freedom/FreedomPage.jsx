@@ -285,12 +285,9 @@
 //   );
 // }
 
-
-
-
-
 import Button from "@/components/ui/Button";
 import { freedomPageData } from "@/data/freedomPageData";
+import ServicesSection from "@/components/offerings/ServicesSection";
 
 /** Purely decorative image: hidden from assistive tech, never blocks clicks. */
 function Deco({ src, className = "" }) {
@@ -347,7 +344,7 @@ export default function FreedomPage() {
                       </em>
                     ) : (
                       <span key={j}>{part.text}</span>
-                    )
+                    ),
                   )}
                 </span>
               ))}
@@ -367,7 +364,6 @@ export default function FreedomPage() {
               width={hero.image.width}
               height={hero.image.height}
               fetchPriority="high"
-              
               className="absolute inset-0 h-full w-full object-cover object-center"
               referrerPolicy="no-referrer"
             />
@@ -448,6 +444,9 @@ export default function FreedomPage() {
           </div>
         </div>
       </section>
+
+      {/* 3.5 SERVICES (API se) */}
+      <ServicesSection dividerSrc={deco.divider} />
 
       {/* 4. CTA */}
       <section className="relative px-5 pb-16 pt-6 text-center sm:px-6 sm:pb-20 lg:pb-24">

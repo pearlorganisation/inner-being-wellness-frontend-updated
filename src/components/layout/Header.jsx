@@ -624,6 +624,7 @@ const NAV_ITEMS = [
   { label: "Manifesto", href: "/manifesto", id: "manifesto", placement: "more" },
   { label: "Defaults", href: "/#four-defaults", id: "defaults", placement: "more" },
   { label: "Reflections", href: "/reflections", id: "reflections", placement: "more" },
+  { label: "Feedback", href: "/feedback", id: "feedback", placement: "more" }, 
   { label: "Contact", href: "/contact", id: "contact", placement: "more" },
 ];
 
