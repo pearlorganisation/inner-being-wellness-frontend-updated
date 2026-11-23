@@ -1,5 +1,4 @@
 # Inner Being Wellness (Next.js)
-
 ## Run locally
 ```bash
 npm install
