@@ -183,7 +183,7 @@ export default function Footer() {
   const { footer, brand } = siteData;
 
   // Footer logo. Doosra logo lagana ho to sirf yeh path badalna
-  // (e.g. "/assets/aistudio/sinner_being_logo2.png")
+  // (e.g. "/assets/aistudio/finallogo.png")
   const logoSrc = brand.logoImage;
 
   return (

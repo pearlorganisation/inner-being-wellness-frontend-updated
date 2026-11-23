@@ -600,7 +600,7 @@ import Button from "@/components/ui/Button";
 /* -------------------------------------------------------------------------- */
 // SVG / transparent logo milte hi sirf yeh path badalna hai (e.g. "/assets/logo.svg")
 // SVG lagne ke baad logo <img> se "mix-blend-multiply" class bhi hata dena.
-const LOGO_SRC = "/assets/aistudio/sinner_being_logo2.png";
+const LOGO_SRC = "/assets/aistudio/finallogo.png";
 const BOOK_SESSION_HREF = "/contact#contact-form";
 const CTA_LABEL = "Book Free Discovery Call";
 
@@ -618,7 +618,7 @@ const NAV_ITEMS = [
       { label: "About Janki Ravani", href: "/janki" },
     ],
   },
-  { label: "services", href: "/freedom-from-resistance", id: "services", placement: "main" },
+  { label: "Service", href: "/freedom-from-resistance", id: "Service", placement: "main" },
   { label: "Frequencies", href: "/offerings", id: "frequencies", placement: "main" },
   { label: "Healy", href: "/film", id: "film", placement: "main" },
   { label: "Manifesto", href: "/manifesto", id: "manifesto", placement: "more" },

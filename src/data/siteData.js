@@ -1526,7 +1526,7 @@
 //         alt: "A calm private space prepared for a wellness consultation",
 //       },
 //       logo: {
-//         src: "/assets/aistudio/sinner_being_logo2.png",
+//         src: "/assets/aistudio/finallogo.png",
 //         alt: "Inner Being Wellness logo",
 //         width: 600,
 //         height: 600,
@@ -1849,7 +1849,7 @@ export const siteData = {
       "Managing Director, Founder & Frequency Wellness Coach Facility Management",
     logoText: "IBW",
     // CLIENT: transparent SVG milte hi sirf yeh path badalna hai
-    logoImage: "/assets/aistudio/sinner_being_logo2.png",
+    logoImage: "/assets/aistudio/finallogo.png",
     contact: {
       email: COMMON_EMAIL,
       // CLIENT: Muazzam se number aate hi bharna (WhatsApp ke liye)
@@ -2074,15 +2074,15 @@ export const siteData = {
     
   videos: [
         {
-          src: "/assets/videos/video1.mp4",
+          src: "/assets/videos/Sequence 21.mp4",
           title: "Healy in the film, clip 1",
         },
         {
-          src: "/assets/videos/video2.mp4",
+          src: "/assets/videos/video 2.mp4",
           title: "Healy in the film, clip 2",
         },
         {
-          src: "/assets/videos/video3.mp4",
+          src: "/assets/videos/video 3.mp4",
           title: "Healy in the film, clip 3",
         },
       ],
@@ -3271,7 +3271,7 @@ export const siteData = {
         alt: "A calm private space prepared for a wellness consultation",
       },
       logo: {
-        src: "/assets/aistudio/sinner_being_logo2.png",
+        src: "/assets/aistudio/finallogo.png",
         alt: "Inner Being Wellness logo",
         width: 600,
         height: 600,
